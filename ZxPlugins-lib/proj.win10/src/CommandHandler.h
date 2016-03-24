@@ -2,7 +2,7 @@
 #define __ZXPLUGIN_COMMAND_HANDLER_H__
 
 
-#if (CC_TARGET_PLATFORM == CC_PLATFORM_WP8)
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_WINRT)
 
 namespace PhoneDirect3DXamlAppComponent {
 
@@ -59,6 +59,6 @@ public:
 
 } // namespace PhoneDirect3DXamlAppComponent
 
-#endif // CC_PLATFORM_WP8
+#endif // CC_PLATFORM_WINRT
 
 #endif /* __ZXPLUGIN_COMMAND_HANDLER_H__ */

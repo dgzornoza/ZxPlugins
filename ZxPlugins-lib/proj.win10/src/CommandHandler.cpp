@@ -1,8 +1,6 @@
 #include "CommandHandler.h"
 
-using namespace cocos2d;
-
-#if (CC_TARGET_PLATFORM == CC_PLATFORM_WP8)
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_WINRT)
 
 namespace PhoneDirect3DXamlAppComponent {
 	

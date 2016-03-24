@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.22823.1
+VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "External", "External", "{B2F1FF1B-005C-490E-999E-17BD4B720B5C}"
 EndProject
@@ -16,6 +16,8 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libbullet", "..\cocos2d\external\bullet\proj.win10\libbullet.vcxproj", "{ECEE1119-CE2E-4F7E-83A8-1932EA48E893}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "librecast", "..\cocos2d\external\recast\proj.win10\librecast.vcxproj", "{F551524D-8A70-4B2F-A7C2-28AE61150022}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libzxplugins", "..\..\ZxPlugins-lib\proj.win10\libzxplugins.vcxproj", "{D2433C00-6EE7-450B-BCE5-9EB7CD28CA3B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -105,6 +107,18 @@ Global
 		{F551524D-8A70-4B2F-A7C2-28AE61150022}.Release|x64.Build.0 = Release|x64
 		{F551524D-8A70-4B2F-A7C2-28AE61150022}.Release|x86.ActiveCfg = Release|Win32
 		{F551524D-8A70-4B2F-A7C2-28AE61150022}.Release|x86.Build.0 = Release|Win32
+		{D2433C00-6EE7-450B-BCE5-9EB7CD28CA3B}.Debug|ARM.ActiveCfg = Debug|ARM
+		{D2433C00-6EE7-450B-BCE5-9EB7CD28CA3B}.Debug|ARM.Build.0 = Debug|ARM
+		{D2433C00-6EE7-450B-BCE5-9EB7CD28CA3B}.Debug|x64.ActiveCfg = Debug|x64
+		{D2433C00-6EE7-450B-BCE5-9EB7CD28CA3B}.Debug|x64.Build.0 = Debug|x64
+		{D2433C00-6EE7-450B-BCE5-9EB7CD28CA3B}.Debug|x86.ActiveCfg = Debug|Win32
+		{D2433C00-6EE7-450B-BCE5-9EB7CD28CA3B}.Debug|x86.Build.0 = Debug|Win32
+		{D2433C00-6EE7-450B-BCE5-9EB7CD28CA3B}.Release|ARM.ActiveCfg = Release|ARM
+		{D2433C00-6EE7-450B-BCE5-9EB7CD28CA3B}.Release|ARM.Build.0 = Release|ARM
+		{D2433C00-6EE7-450B-BCE5-9EB7CD28CA3B}.Release|x64.ActiveCfg = Release|x64
+		{D2433C00-6EE7-450B-BCE5-9EB7CD28CA3B}.Release|x64.Build.0 = Release|x64
+		{D2433C00-6EE7-450B-BCE5-9EB7CD28CA3B}.Release|x86.ActiveCfg = Release|Win32
+		{D2433C00-6EE7-450B-BCE5-9EB7CD28CA3B}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -114,5 +128,6 @@ Global
 		{4B3BA10A-941F-4E08-8A50-8A7FCB822BB8} = {B2F1FF1B-005C-490E-999E-17BD4B720B5C}
 		{ECEE1119-CE2E-4F7E-83A8-1932EA48E893} = {B2F1FF1B-005C-490E-999E-17BD4B720B5C}
 		{F551524D-8A70-4B2F-A7C2-28AE61150022} = {B2F1FF1B-005C-490E-999E-17BD4B720B5C}
+		{D2433C00-6EE7-450B-BCE5-9EB7CD28CA3B} = {B2F1FF1B-005C-490E-999E-17BD4B720B5C}
 	EndGlobalSection
 EndGlobal
