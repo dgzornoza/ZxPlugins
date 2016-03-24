@@ -36,13 +36,13 @@ CC_CONSTRUCTOR_ACCESS:
 	{
 		// 1.- Inicializar la escena padre
 		if (!Scene::init()) return false;
-
+		
 		// 2.- inicializar capas
 		this->m_mainlayer = Tlayer::create();
 
 		// 3.- añadir capas a la escena
 		this->addChild(this->m_mainlayer);
-
+		
 		// inicializacion correcta
 		return true;
 	}

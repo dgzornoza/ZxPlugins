@@ -2,7 +2,8 @@
 #define __ZXPLUGIN_COMMAND_HANDLER_H__
 
 
-#if (CC_TARGET_PLATFORM == CC_PLATFORM_WINRT)
+// WinRT (Windows 10 Universal)
+#if defined(_WINRT_DLL)
 
 namespace PhoneDirect3DXamlAppComponent {
 
