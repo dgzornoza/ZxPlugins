@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Resources">
+      <UniqueIdentifier>d23cbdf6-b306-428f-995e-95637ab7eff1</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tga;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{0e17e968-d7e3-44e7-85c6-569d504b46e1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\ZMedia">
+      <UniqueIdentifier>{1cfb2a9f-f64f-4aa0-92c5-66603fd54067}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="pch.cpp" />
+    <ClCompile Include="Class1.cpp" />
+    <ClCompile Include="src\CommandHandler.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PluginFactory.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="pch.h" />
+    <ClInclude Include="Class1.h" />
+    <ClInclude Include="src\CommandHandler.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IPlugin.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PluginFactory.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ZMedia\ZMediaPlugin.h">
+      <Filter>src\ZMedia</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
