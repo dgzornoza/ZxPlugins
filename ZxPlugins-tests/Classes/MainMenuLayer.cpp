@@ -52,7 +52,7 @@ bool MainMenuLayer::init()
 	Size screenSize = Director::getInstance()->getWinSize();
 
 	// cachear los spriteframes del menu
-	SpriteFrameCache::getInstance()->addSpriteFramesWithFile("MainMenu/gui.plist", "MainMenu/gui.png");
+	//SpriteFrameCache::getInstance()->addSpriteFramesWithFile("MainMenu/gui.plist", "MainMenu/gui.png");
 	    
 	// crear un layout principal para los controles UI
 	ui::Layout* layout = ui::Layout::create();
@@ -63,7 +63,6 @@ bool MainMenuLayer::init()
 	this->_createMenu(layout);
 	// crear el boton para cerrar la aplicacion
 	this->_createCloseButton(layout);
-
 
 	// inicializacion correcta
 	return true;
