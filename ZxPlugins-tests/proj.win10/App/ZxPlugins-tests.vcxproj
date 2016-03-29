@@ -267,9 +267,6 @@
     <Page Include="Cocos2dEngine\OpenGLESPage.xaml" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\ZxPlugins-lib\proj.win10\libzxplugins.vcxproj">
-      <Project>{d2433c00-6ee7-450b-bce5-9eb7cd28ca3b}</Project>
-    </ProjectReference>
     <ProjectReference Include="..\..\cocos2d\cocos\2d\libcocos2d_win10\libcocos2d.vcxproj">
       <Project>{07c2895d-720c-487d-b7b4-12c293ea533f}</Project>
     </ProjectReference>

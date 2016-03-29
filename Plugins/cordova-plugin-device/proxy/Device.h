@@ -1,7 +1,7 @@
-#ifndef __ZXPLUGIN_CORDOVA_PLUGIN_DEVICE_H__
-#define __ZXPLUGIN_CORDOVA_PLUGIN_DEVICE_H__
+#ifndef __ZXPLUGIN_DEVICE_H__
+#define __ZXPLUGIN_DEVICE_H__
 
-#include "../../../ZxPlugins-lib/proj.win10/src/IPlugin.h"
+#include "../../../ZxPlugins-lib/src/IPlugin.h"
 
 /**
 * @addtogroup ZxPlugin
@@ -107,4 +107,4 @@ namespace cocos2d { namespace zxplugin { namespace cordova_plugin_device {
 	// end of ZxPlugin group
 	/// @}
 
-#endif /* __ZXPLUGIN_CORDOVA_PLUGIN_DEVICE_H__ */
+#endif /* __ZXPLUGIN_DEVICE_H__ */
