@@ -21,15 +21,13 @@ namespace cocos2d { namespace zxplugin { namespace cordova_plugin_device {
 		const char* Version;
 		/** Get the device's Universally Unique Identifier (UUID). */
 		const char* Uuid;
-		/** Version of Cordova running on the device. */
-		const char* Cordova;
 		/** Name of the device's model or product. The value is set by the device manufacturer and may be different across versions of the same product. */
 		const char* Model;
 		/** Device's manufacturer. */
 		const char* Manufacturer;
 		/** Whether the device is running on a simulator. */
 		const char* IsVirtual;
-		/** Device hardware serial number (SERIAL). */
+		/** Device hardware serial number (Only for Android/IOS). */
 		const char* Serial;
 	};
 
@@ -88,7 +86,8 @@ namespace cocos2d { namespace zxplugin { namespace cordova_plugin_device {
 		void getInfo(std::function<void(const std::string&)> _successCallback, std::function<void(const std::string&)> _errorCallback)
 		{
 			// invoke native code
-			this->exec(_successCallback, _errorCallback, "Device", "getDeviceInfo", "[]");
+			this->exec(_successCallback, _errorCallback, 
+				"org.apache.cordova.device", "getDeviceInfo", "[]");
 
 			//this->exec(
 			//	_successCallback, _errorCallback,
