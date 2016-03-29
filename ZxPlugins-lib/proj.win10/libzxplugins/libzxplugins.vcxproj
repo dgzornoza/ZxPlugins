@@ -27,7 +27,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{d2433c00-6ee7-450b-bce5-9eb7cd28ca3b}</ProjectGuid>
+    <ProjectGuid>{4d3565f7-7c84-480b-9b23-fa53ccc59be9}</ProjectGuid>
     <Keyword>WindowsRuntimeComponent</Keyword>
     <ProjectName>libzxplugins</ProjectName>
     <RootNamespace>libzxplugins</RootNamespace>
@@ -207,16 +207,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\src\CommandHandler.h" />
+    <ClInclude Include="..\..\src\IPlugin.h" />
+    <ClInclude Include="..\..\src\PluginFactory.h" />
+    <ClInclude Include="..\..\src\ZMedia\ZMediaPlugin.h" />
     <ClInclude Include="Class1.h" />
-    <ClInclude Include="src\CommandHandler.h" />
-    <ClInclude Include="src\IPlugin.h" />
-    <ClInclude Include="src\PluginFactory.h" />
-    <ClInclude Include="src\ZMedia\ZMediaPlugin.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\src\CommandHandler.cpp" />
+    <ClCompile Include="..\..\src\PluginFactory.cpp" />
     <ClCompile Include="Class1.cpp" />
-    <ClCompile Include="src\CommandHandler.cpp" />
-    <ClCompile Include="src\PluginFactory.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -8,41 +8,44 @@
 namespace cocos2d { namespace zxplugin {
 
 	/**
-	@brief Plugin properties model
+	@brief Plugin properties model	
 	*/
-	class PluginPropertiesModel
+	struct PluginPropertiesModel
 	{
-
-	public:
+		/** Get flag telling if wrap cordova plugin = true, false if not wrap cordova plugin
+		* @return ZxPlugin author
+		* @remarks This ZxPlugin author
+		*/
+		bool WrapCordovaPlugin;
 
 		/** Get plugin name
 		* @return plugin name
-		* @remarks Usually the plugin name must be obtained from original plugin file "plugin.xml" or "package.json"
+		* @remarks If wrap cordova plugin, the plugin name must be obtained from original plugin file "plugin.xml" or "package.json"
 		*/
 		const char* Name;
 
 		/** Get plugin version
 		* @return plugin version
-		* @remarks Usually the plugin version must be obtained from original plugin file "plugin.xml" or "package.json"
+		* @remarks If wrap cordova plugin, the plugin version must be obtained from original plugin file "plugin.xml" or "package.json"
 		*/
 		const char* Version;
 
 		/** Get plugin description
 		* @return plugin description
-		* @remarks Usually the plugin description must be obtained from original plugin file "plugin.xml" or "package.json"
+		* @remarks If wrap cordova plugin, the plugin description must be obtained from original plugin file "plugin.xml" or "package.json"
 		*/
 		const char* Description;
 
 		/** Get cordova plugin licebnse
 		* @return cordova plugin license
-		* @remarks Usually the cordova plugin license must be obtained from original plugin file "plugin.xml" or "package.json". 
+		* @remarks If wrap cordova plugin, the cordova plugin license must be obtained from original plugin file "plugin.xml" or "package.json". 
 		* License for this ZxPlugin must be compatible with de cordova plugin license
 		*/
 		const char* License;
 
-		/** Get cordova plugin author
+		/** Get cordova plugin author (Only for wrap cordova plugin)
 		* @return cordova plugin author
-		* @remarks Usually the cordova plugin author must be obtained from original plugin file "plugin.xml" or "package.json"
+		* @remarks If wrap cordova plugin, the cordova plugin author must be obtained from original plugin file "plugin.xml" or "package.json"
 		*/
 		const char* CordovaAuthor;
 
@@ -99,9 +102,9 @@ namespace cocos2d { namespace zxplugin {
 		
 		};
 	
+
+
 	private:
-
-
 
 		/** function for wrap c++ std:function to platform native pointer function
 		* @param _callback c++ std::function for wrap into platform native pointer function

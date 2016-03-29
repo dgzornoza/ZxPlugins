@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libzxplugins", "libzxplugins.vcxproj", "{D2433C00-6EE7-450B-BCE5-9EB7CD28CA3B}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libzxplugins", "libzxplugins\libzxplugins.vcxproj", "{4D3565F7-7C84-480B-9B23-FA53CCC59BE9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,18 +15,18 @@ Global
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{D2433C00-6EE7-450B-BCE5-9EB7CD28CA3B}.Debug|ARM.ActiveCfg = Debug|ARM
-		{D2433C00-6EE7-450B-BCE5-9EB7CD28CA3B}.Debug|ARM.Build.0 = Debug|ARM
-		{D2433C00-6EE7-450B-BCE5-9EB7CD28CA3B}.Debug|x64.ActiveCfg = Debug|x64
-		{D2433C00-6EE7-450B-BCE5-9EB7CD28CA3B}.Debug|x64.Build.0 = Debug|x64
-		{D2433C00-6EE7-450B-BCE5-9EB7CD28CA3B}.Debug|x86.ActiveCfg = Debug|Win32
-		{D2433C00-6EE7-450B-BCE5-9EB7CD28CA3B}.Debug|x86.Build.0 = Debug|Win32
-		{D2433C00-6EE7-450B-BCE5-9EB7CD28CA3B}.Release|ARM.ActiveCfg = Release|ARM
-		{D2433C00-6EE7-450B-BCE5-9EB7CD28CA3B}.Release|ARM.Build.0 = Release|ARM
-		{D2433C00-6EE7-450B-BCE5-9EB7CD28CA3B}.Release|x64.ActiveCfg = Release|x64
-		{D2433C00-6EE7-450B-BCE5-9EB7CD28CA3B}.Release|x64.Build.0 = Release|x64
-		{D2433C00-6EE7-450B-BCE5-9EB7CD28CA3B}.Release|x86.ActiveCfg = Release|Win32
-		{D2433C00-6EE7-450B-BCE5-9EB7CD28CA3B}.Release|x86.Build.0 = Release|Win32
+		{4D3565F7-7C84-480B-9B23-FA53CCC59BE9}.Debug|ARM.ActiveCfg = Debug|ARM
+		{4D3565F7-7C84-480B-9B23-FA53CCC59BE9}.Debug|ARM.Build.0 = Debug|ARM
+		{4D3565F7-7C84-480B-9B23-FA53CCC59BE9}.Debug|x64.ActiveCfg = Debug|x64
+		{4D3565F7-7C84-480B-9B23-FA53CCC59BE9}.Debug|x64.Build.0 = Debug|x64
+		{4D3565F7-7C84-480B-9B23-FA53CCC59BE9}.Debug|x86.ActiveCfg = Debug|Win32
+		{4D3565F7-7C84-480B-9B23-FA53CCC59BE9}.Debug|x86.Build.0 = Debug|Win32
+		{4D3565F7-7C84-480B-9B23-FA53CCC59BE9}.Release|ARM.ActiveCfg = Release|ARM
+		{4D3565F7-7C84-480B-9B23-FA53CCC59BE9}.Release|ARM.Build.0 = Release|ARM
+		{4D3565F7-7C84-480B-9B23-FA53CCC59BE9}.Release|x64.ActiveCfg = Release|x64
+		{4D3565F7-7C84-480B-9B23-FA53CCC59BE9}.Release|x64.Build.0 = Release|x64
+		{4D3565F7-7C84-480B-9B23-FA53CCC59BE9}.Release|x86.ActiveCfg = Release|Win32
+		{4D3565F7-7C84-480B-9B23-FA53CCC59BE9}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
