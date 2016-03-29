@@ -1,6 +1,7 @@
 #include "CommandHandler.h"
 
-#if (CC_TARGET_PLATFORM == CC_PLATFORM_WINRT)
+// WinRT (Windows 10 Universal)
+#if defined(_WINRT_DLL)
 
 namespace PhoneDirect3DXamlAppComponent {
 	
@@ -31,5 +32,6 @@ void CommandHandler::execPlatformCommand(CompletedFunc^ _successCallback, Comple
 
 } // namespace PhoneDirect3DXamlAppComponent
 
-#endif // CC_PLATFORM_WP8
+#endif // _WINRT_DLL
+
 

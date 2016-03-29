@@ -167,3 +167,4 @@ $RECYCLE.BIN/
 *.opendb
 *.db
 
+/ZxPlugins-tests/proj.android/local.properties

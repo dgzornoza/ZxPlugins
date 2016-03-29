@@ -86,49 +86,49 @@ void MainMenuLayer::_createMenu(ui::Layout* _layout)
 		lv->pushBackCustomItem(text);
     }
 	
-	// eventos de seleccion de items
-	lv->addEventListener((ui::ListView::ccListViewCallback)[](Ref* _sender, ui::ListView::EventType _type)		
-	{
-		// evaluar el tipo de evento generado
-		switch (_type)
-		{
+	//// eventos de seleccion de items
+	//lv->addEventListener((ui::ListView::ccListViewCallback)[](Ref* _sender, ui::ListView::EventType _type)		
+	//{
+	//	// evaluar el tipo de evento generado
+	//	switch (_type)
+	//	{
 
-		case cocos2d::ui::ListView::EventType::ON_SELECTED_ITEM_END:
+	//	case cocos2d::ui::ListView::EventType::ON_SELECTED_ITEM_END:
 
-			// obtener el listview
-			ui::ListView* lv = static_cast<ui::ListView*>(_sender);
-			// obtener el indice del elemento seleccionado y el item seleccionado
-			ssize_t selectedIndex = lv->getCurSelectedIndex();
-			ui::Widget* selectedItem = lv->getItem(selectedIndex);
-			
-			// crear acciones para dar efecto al item seleccionado y cambiar a la escena que impelemnta la accion cuando finalicen
-			//selectedItem->runAction(TintTo::create(1.0f, 0x0, 0xFF, 0x0));
-			//selectedItem->runAction(Sequence::create(DelayTime::create(.3f), ScaleTo::create(.7f, 1.0f, .0f), nullptr));
-			//selectedItem->runAction(Sequence::create(				
-			//	Sequence::create(MoveBy::create(.3f, Vec2(-20.0f, .0f)), MoveBy::create(.7f, Vec2(500.0f, .0f)), nullptr),
-			//	CallFunc::create([selectedIndex]()
-			//	{
-			//		// eliminar todos los datos de la cache de esta capa
-			//		Director::getInstance()->purgeCachedData();
+	//		// obtener el listview
+	//		ui::ListView* lv = static_cast<ui::ListView*>(_sender);
+	//		// obtener el indice del elemento seleccionado y el item seleccionado
+	//		ssize_t selectedIndex = lv->getCurSelectedIndex();
+	//		ui::Widget* selectedItem = lv->getItem(selectedIndex);
+	//		
+	//		// crear acciones para dar efecto al item seleccionado y cambiar a la escena que impelemnta la accion cuando finalicen
+	//		//selectedItem->runAction(TintTo::create(1.0f, 0x0, 0xFF, 0x0));
+	//		//selectedItem->runAction(Sequence::create(DelayTime::create(.3f), ScaleTo::create(.7f, 1.0f, .0f), nullptr));
+	//		//selectedItem->runAction(Sequence::create(				
+	//		//	Sequence::create(MoveBy::create(.3f, Vec2(-20.0f, .0f)), MoveBy::create(.7f, Vec2(500.0f, .0f)), nullptr),
+	//		//	CallFunc::create([selectedIndex]()
+	//		//	{
+	//		//		// eliminar todos los datos de la cache de esta capa
+	//		//		Director::getInstance()->purgeCachedData();
 
-			//		// crear la escena con el ejemplo seleccionado por el indice del listview
-			//		Scene* scene = g_testList[selectedIndex].callback();
+	//		//		// crear la escena con el ejemplo seleccionado por el indice del listview
+	//		//		Scene* scene = g_testList[selectedIndex].callback();
 
-			//		// cambiar a la escena con la accion
-			//		Director::getInstance()->replaceScene(scene);
-			//	}),
-			//	nullptr));
-			
-			// eliminar todos los datos de la cache de esta capa
-			Director::getInstance()->purgeCachedData();
-			// crear la escena con el ejemplo seleccionado por el indice del listview
-			Scene* scene = g_testList[selectedIndex].callback();
-			// cambiar a la escena con la accion
-			Director::getInstance()->pushScene(scene);
+	//		//		// cambiar a la escena con la accion
+	//		//		Director::getInstance()->replaceScene(scene);
+	//		//	}),
+	//		//	nullptr));
+	//		
+	//		// eliminar todos los datos de la cache de esta capa
+	//		Director::getInstance()->purgeCachedData();
+	//		// crear la escena con el ejemplo seleccionado por el indice del listview
+	//		Scene* scene = g_testList[selectedIndex].callback();
+	//		// cambiar a la escena con la accion
+	//		Director::getInstance()->pushScene(scene);
 
-			break;
-		}
-	});
+	//		break;
+	//	}
+	//});
 
 
 	// añadir el listview al layout

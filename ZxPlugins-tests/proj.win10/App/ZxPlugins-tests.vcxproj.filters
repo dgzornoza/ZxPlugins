@@ -14,9 +14,6 @@
     <Filter Include="Classes">
       <UniqueIdentifier>{a18967bc-4fa1-4c67-bf7e-3f9c8b6a1129}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Classes\Prueba">
-      <UniqueIdentifier>{6b409693-c6d5-4919-9f31-9b25e11c8c5a}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml" />
@@ -36,9 +33,6 @@
     </ClCompile>
     <ClCompile Include="..\..\Classes\MainMenuLayer.cpp">
       <Filter>Classes</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Classes\Prueba\ZPluginsSampleLayer.cpp">
-      <Filter>Classes\Prueba</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Classes\LayerBase.cpp">
       <Filter>Classes</Filter>
@@ -62,9 +56,6 @@
     </ClInclude>
     <ClInclude Include="..\..\Classes\MainMenuLayer.h">
       <Filter>Classes</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Classes\Prueba\ZPluginsSampleLayer.h">
-      <Filter>Classes\Prueba</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Classes\LayerBase.h">
       <Filter>Classes</Filter>

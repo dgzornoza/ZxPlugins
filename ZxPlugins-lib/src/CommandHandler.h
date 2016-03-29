@@ -60,6 +60,6 @@ public:
 
 } // namespace PhoneDirect3DXamlAppComponent
 
-#endif // CC_PLATFORM_WINRT
+#endif // _WINRT_DLL
 
 #endif /* __ZXPLUGIN_COMMAND_HANDLER_H__ */

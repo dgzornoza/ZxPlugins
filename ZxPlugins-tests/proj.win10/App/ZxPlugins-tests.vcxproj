@@ -219,7 +219,6 @@
     <ClInclude Include="..\..\Classes\BasicScene.h" />
     <ClInclude Include="..\..\Classes\LayerBase.h" />
     <ClInclude Include="..\..\Classes\MainMenuLayer.h" />
-    <ClInclude Include="..\..\Classes\Prueba\ZPluginsSampleLayer.h" />
     <ClInclude Include="App.xaml.h">
       <DependentUpon>App.xaml</DependentUpon>
     </ClInclude>
@@ -245,7 +244,6 @@
     <ClCompile Include="..\..\Classes\AppDelegate.cpp" />
     <ClCompile Include="..\..\Classes\LayerBase.cpp" />
     <ClCompile Include="..\..\Classes\MainMenuLayer.cpp" />
-    <ClCompile Include="..\..\Classes\Prueba\ZPluginsSampleLayer.cpp" />
     <ClCompile Include="App.xaml.cpp">
       <DependentUpon>App.xaml</DependentUpon>
     </ClCompile>

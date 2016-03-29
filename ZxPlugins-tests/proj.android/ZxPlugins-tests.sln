@@ -1,0 +1,42 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "proj.androidNative", "proj.androidNative.vcxproj", "{1D8883E1-4209-41DA-BEFB-A6E67EEAB488}"
+EndProject
+Project("{39E2626F-3545-4960-A6E8-258AD8476CE5}") = "proj.androidPackaging", "proj.androidPackaging.androidproj", "{56E8FA08-DA37-4C25-A9DD-40A47EDFDB09}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|ARM = Debug|ARM
+		Debug|x86 = Debug|x86
+		Release|ARM = Release|ARM
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1D8883E1-4209-41DA-BEFB-A6E67EEAB488}.Debug|ARM.ActiveCfg = Debug|ARM
+		{1D8883E1-4209-41DA-BEFB-A6E67EEAB488}.Debug|ARM.Build.0 = Debug|ARM
+		{1D8883E1-4209-41DA-BEFB-A6E67EEAB488}.Debug|x86.ActiveCfg = Debug|x86
+		{1D8883E1-4209-41DA-BEFB-A6E67EEAB488}.Debug|x86.Build.0 = Debug|x86
+		{1D8883E1-4209-41DA-BEFB-A6E67EEAB488}.Release|ARM.ActiveCfg = Release|ARM
+		{1D8883E1-4209-41DA-BEFB-A6E67EEAB488}.Release|ARM.Build.0 = Release|ARM
+		{1D8883E1-4209-41DA-BEFB-A6E67EEAB488}.Release|x86.ActiveCfg = Release|x86
+		{1D8883E1-4209-41DA-BEFB-A6E67EEAB488}.Release|x86.Build.0 = Release|x86
+		{56E8FA08-DA37-4C25-A9DD-40A47EDFDB09}.Debug|ARM.ActiveCfg = Debug|ARM
+		{56E8FA08-DA37-4C25-A9DD-40A47EDFDB09}.Debug|ARM.Build.0 = Debug|ARM
+		{56E8FA08-DA37-4C25-A9DD-40A47EDFDB09}.Debug|ARM.Deploy.0 = Debug|ARM
+		{56E8FA08-DA37-4C25-A9DD-40A47EDFDB09}.Debug|x86.ActiveCfg = Debug|x86
+		{56E8FA08-DA37-4C25-A9DD-40A47EDFDB09}.Debug|x86.Build.0 = Debug|x86
+		{56E8FA08-DA37-4C25-A9DD-40A47EDFDB09}.Debug|x86.Deploy.0 = Debug|x86
+		{56E8FA08-DA37-4C25-A9DD-40A47EDFDB09}.Release|ARM.ActiveCfg = Release|ARM
+		{56E8FA08-DA37-4C25-A9DD-40A47EDFDB09}.Release|ARM.Build.0 = Release|ARM
+		{56E8FA08-DA37-4C25-A9DD-40A47EDFDB09}.Release|ARM.Deploy.0 = Release|ARM
+		{56E8FA08-DA37-4C25-A9DD-40A47EDFDB09}.Release|x86.ActiveCfg = Release|x86
+		{56E8FA08-DA37-4C25-A9DD-40A47EDFDB09}.Release|x86.Build.0 = Release|x86
+		{56E8FA08-DA37-4C25-A9DD-40A47EDFDB09}.Release|x86.Deploy.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
