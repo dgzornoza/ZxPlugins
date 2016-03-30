@@ -27,7 +27,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{4D3565F7-7C84-480B-9B23-FA53CCC59BE9}</ProjectGuid>
+    <ProjectGuid>{B1EF5D5D-0930-48DA-92C1-DC0E46C194D8}</ProjectGuid>
     <Keyword>StaticLibrary</Keyword>
     <ProjectName>libzxplugins</ProjectName>
     <RootNamespace>libzxplugins</RootNamespace>
