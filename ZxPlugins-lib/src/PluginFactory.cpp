@@ -1,6 +1,6 @@
 ﻿#include "PluginFactory.h"
 
-namespace cocos2d { namespace zxplugin {
+using namespace cocos2d::zxplugin;
 
 // initialize singleton
 PluginFactory* PluginFactory::s_pluginFactory = nullptr;
@@ -13,12 +13,6 @@ PluginFactory::PluginFactory(void)
 /** Default destructor */
 PluginFactory::~PluginFactory()
 {
-	// delete all plugins
-	for (auto& _plugin : m_pluginsMap)
-	{
-		if(_plugin.second != nullptr) delete _plugin.second;
-	};
-
 	// clean plugins map
 	m_pluginsMap.clear();
 }
@@ -38,13 +32,13 @@ void PluginFactory::unloadPlugin(const char* _pluginName)
 	assert((_pluginName == nullptr || strlen(_pluginName) == 0) && "PluginFactory::unloadPlugin() => Plugin name is required");
 
 	// find plugin name in plugins map
-    std::map<const char*, IPlugin*>::iterator it = m_pluginsMap.find(_pluginName);
+    std::map<const char*, std::shared_ptr<IPlugin>>::iterator it = this->m_pluginsMap.find(_pluginName);
 	// if not found, return
 	if (it == m_pluginsMap.end()) return;
 
 	// delete plugin and erase key/value from plugins map
-    if (it->second != nullptr) delete it->second;
+	if (it->second != nullptr) it->second = nullptr;
 	m_pluginsMap.erase(it);
-}
 
-}} //namespace cocos2d { namespace zxplugin {
+
+}

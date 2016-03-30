@@ -42,35 +42,19 @@ namespace cocos2d { namespace zxplugin { namespace cordova_plugin_device {
 
 
 		/** Default constructor */
-		Device() {}
+		Device() 
+		{
+			this->setPluginProperties(PluginPropertiesModel({ true,
+				"cordova-plugin-device",
+				"1.1.2-dev",
+				"Cordova Device Plugin",
+				"Apache-2.0",
+				"Apache Software Foundation",
+				"David González Zornoza" }));
+		}
 
 		/** Default destructor */
 		virtual ~Device() {}
-
-
-		/// @{
-		/// @name Properties setter/getters
-
-		/**
-		@brief Get plugin properties
-		@return plugin properties
-		@remarks This function must be overridden for get plugin properties
-		*/
-		virtual const PluginPropertiesModel& getPluginProperties()
-		{
-			return 
-			{ 
-				"cordova-plugin-device", 
-				"1.1.2-dev", 
-				"Cordova Device Plugin", 
-				"Apache-2.0", 
-				"Apache Software Foundation", 
-				"David González Zornoza" 
-			};
-		}
-
-		/// @} End Properties setter/getters
-	
 
 
 		/// @{

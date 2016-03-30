@@ -210,13 +210,10 @@
     <ClInclude Include="..\..\src\CommandHandler.h" />
     <ClInclude Include="..\..\src\IPlugin.h" />
     <ClInclude Include="..\..\src\PluginFactory.h" />
-    <ClInclude Include="..\..\src\ZMedia\ZMediaPlugin.h" />
-    <ClInclude Include="Class1.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\src\CommandHandler.cpp" />
     <ClCompile Include="..\..\src\PluginFactory.cpp" />
-    <ClCompile Include="Class1.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

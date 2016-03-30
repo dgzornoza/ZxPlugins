@@ -11,12 +11,8 @@ namespace org.apache.cordova.device
     public class Device : BaseCommand
     {
 
-        #region [Variables miembro]
 
-        #endregion [Variables miembro]
-
-
-        #region [Inicializacion]
+        #region [Inicialization]
 
         /// <summary>
         /// Default constructor
@@ -25,15 +21,11 @@ namespace org.apache.cordova.device
         {
         }
 
-        #endregion [Inicializacion]
+        #endregion [Inicialization]
 
 
-        #region [Propiedades]
 
-        #endregion [Propiedades]
-
-
-        #region [Funciones publicas]
+        #region [Public methods]
 
         /// <summary>
         /// Function for get device info
@@ -68,7 +60,7 @@ namespace org.apache.cordova.device
                         var ASHWID = Windows.System.Profile.HardwareIdentification.GetPackageSpecificToken(null).Id;
                         deviceId = Windows.Storage.Streams.DataReader.FromBuffer(ASHWID).ReadGuid().ToString();
                     }
-                    catch (e)
+                    catch
                     {
                         // Couldn't get the hardware UUID
                         deviceId = string.Empty;
@@ -118,18 +110,14 @@ namespace org.apache.cordova.device
             catch (Exception ex)
             {
                 // dispatch cordova plugin error
-                DispatchCommandResult(new PluginResult(PluginResult.Status.ERROR, rl.GetString("ERROR_GET_DEVICE_INFO"));
+                DispatchCommandResult(new PluginResult(PluginResult.Status.ERROR, rl.GetString("ERROR_GET_DEVICE_INFO")));
                 System.Diagnostics.Debug.WriteLine("Plugin Device - getDeviceInfo ERROR: " + ex.Message);
             }
 
         }
 
-        #endregion [Funciones publicas]
+        #endregion [Public methods]
 
-
-        #region [Funciones privadas]
-
-        #endregion [Funciones privadas]
 
     }
 }

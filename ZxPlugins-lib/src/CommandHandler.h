@@ -3,9 +3,9 @@
 
 
 // WinRT (Windows 10 Universal)
-#if defined(_WINRT_DLL)
+//#if defined(WINRT) || defined(_WINRT_DLL)
 
-namespace PhoneDirect3DXamlAppComponent {
+namespace libzxplugins {
 
 /**
 * delegate to invoke from platform command handler on finish command
@@ -40,6 +40,7 @@ public:
 [Windows::Foundation::Metadata::WebHostHidden]
 public ref class CommandHandler sealed
 { 
+
 public: 
 
 	/** function for set platform command handler for interop with platform code
@@ -58,8 +59,8 @@ public:
 
 };
 
-} // namespace PhoneDirect3DXamlAppComponent
+} // namespace CocosAppWinRT
 
-#endif // _WINRT_DLL
+//#endif // _WINRT_DLL
 
 #endif /* __ZXPLUGIN_COMMAND_HANDLER_H__ */

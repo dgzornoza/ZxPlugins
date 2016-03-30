@@ -1,9 +1,9 @@
 #include "CommandHandler.h"
 
 // WinRT (Windows 10 Universal)
-#if defined(_WINRT_DLL)
+//#if defined(WINRT) || defined(_WINRT_DLL)
 
-namespace PhoneDirect3DXamlAppComponent {
+using namespace libzxplugins;
 	
 
 // anonimous namespace for global objects in cpp file
@@ -30,8 +30,7 @@ void CommandHandler::execPlatformCommand(CompletedFunc^ _successCallback, Comple
 }
 
 
-} // namespace PhoneDirect3DXamlAppComponent
 
-#endif // _WINRT_DLL
+//#endif // _WINRT_DLL
 
 

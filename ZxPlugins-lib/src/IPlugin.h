@@ -2,6 +2,7 @@
 #define __ZXPLUGIN_IPLUGIN_H__
 
 #include "CommandHandler.h"
+#include <memory>
 #include <functional>
 #include <codecvt>
 
@@ -75,12 +76,18 @@ namespace cocos2d { namespace zxplugin {
 		/** 
 		@brief Get plugin properties
 		@return plugin properties
-		@remarks This function must be overridden for get plugin properties
 		*/
-		virtual const PluginPropertiesModel& getPluginProperties() const = 0;
+		const PluginPropertiesModel* getPluginProperties() { return this->m_pluginPropertiesModel.get(); }
 
 
 	protected:
+
+		/**
+		@brief Set plugin properties
+		@param _pluginProperties plugin properties
+		@remarks This function must be invoked for inherited classes for set plugin properties
+		*/
+		void setPluginProperties(PluginPropertiesModel& _pluginProperties) { this->m_pluginPropertiesModel = std::make_shared<PluginPropertiesModel>(_pluginProperties); }
 
 		/**
 		 * Method for invoke platform native code
@@ -92,8 +99,8 @@ namespace cocos2d { namespace zxplugin {
 		 */
 		void exec(std::function<void(const std::string&)> _successCallback, std::function<void(const std::string&)> _errorCallback, const char* _className, const char* _funcName, std::string _params)
 		{
-			// invoke platform handler command code
-			PhoneDirect3DXamlAppComponent::CommandHandler::execPlatformCommand(
+			// invoke platform handler command code			
+			libzxplugins::CommandHandler::execPlatformCommand(
 				_wrapPlatformCallback(_successCallback), 
 				_wrapPlatformCallback(_errorCallback),
 				_convertToPlatformString(_className),
@@ -106,13 +113,16 @@ namespace cocos2d { namespace zxplugin {
 
 	private:
 
+		/** Plugin properties model */
+		std::shared_ptr<PluginPropertiesModel> m_pluginPropertiesModel;
+
 		/** function for wrap c++ std:function to platform native pointer function
 		* @param _callback c++ std::function for wrap into platform native pointer function
 		* @result platform native pointer function
 		*/
-		PhoneDirect3DXamlAppComponent::CompletedFunc^ _wrapPlatformCallback(std::function<void(const std::string&)> _callback)
+		libzxplugins::CompletedFunc^ _wrapPlatformCallback(std::function<void(const std::string&)> _callback)
 		{		
-			return ref new PhoneDirect3DXamlAppComponent::CompletedFunc([=](Platform::String^ _param)
+			return ref new libzxplugins::CompletedFunc([=](Platform::String^ _param)
 			{
 				_callback(_convertFromPlatformString(_param));
 			});

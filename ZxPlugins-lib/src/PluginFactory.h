@@ -4,6 +4,7 @@
 #include "IPlugin.h"
 
 #include <assert.h>
+#include <memory>
 #include <map>
 #include <string>
 #include <type_traits> 
@@ -31,11 +32,11 @@ public:
 	 */
     static PluginFactory* getInstance();
 
-	/** load plugin by name
+	/** load plugin
 	 * @param _pluginName unique name for plugin identity
 	 * @return plugin loaded
 	 */
-	template<class TPlugin>
+	template<typename TPlugin>
 	TPlugin* loadPlugin(const char* _pluginName)
 	{
 		// verify IPlugin inheritance
@@ -43,24 +44,24 @@ public:
 
 		// verify plugin name
 		assert((_pluginName != nullptr && strlen(_pluginName) != 0) && "PluginFactory::loadPlugin() => Plugin name is required");
-
+		
 		// result
 		TPlugin* plugin = nullptr;
 
 		// find plugin name in plugins map
-		std::map<const char*, IPlugin*>::iterator it = m_pluginsMap.find(_pluginName);
+		std::map<const char*, std::shared_ptr<IPlugin>>::iterator it = m_pluginsMap.find(_pluginName);
 		// found
 		if (it != m_pluginsMap.end())
 		{
 			// verify plugin pointer, create if not found and insert in plugins map
-			if (it->second == nullptr) it->second = new TPlugin();
-			assert((plugin != (TPlugin*)it->second) && "PluginFactory::loadPlugin() => Already plugin loaded with other type.");
+			if (it->second == nullptr) it->second = std::make_shared<TPlugin>();
+			assert((plugin != it->second.get()) && "PluginFactory::loadPlugin() => Already plugin loaded with other type.");
 		}
 		// not found. create plugin and insert in plugin map
 		else
 		{
-        	plugin = new TPlugin();
-        	m_pluginsMap[_pluginName] = plugin;
+			m_pluginsMap[_pluginName] = std::make_shared<TPlugin>();
+			plugin =(TPlugin*) m_pluginsMap[_pluginName].get();
 		}
 		
 		// return loaded plugin
@@ -78,7 +79,7 @@ private:
 	PluginFactory();     
 
 	/** Map of loaded plugins */
-    std::map<const char*, IPlugin*> m_pluginsMap;
+    std::map<const char*, std::shared_ptr<IPlugin>> m_pluginsMap;
 
 	/** singleton instance */
 	static PluginFactory* s_pluginFactory;

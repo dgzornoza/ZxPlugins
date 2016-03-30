@@ -7,7 +7,7 @@
     <ProjectGuid>{2A88D3C4-5E5F-45DF-9A65-BC177F5E1C0B}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>cordova_plugin_device_native</RootNamespace>
+    <RootNamespace>org.apache.cordova.device</RootNamespace>
     <AssemblyName>cordova-plugin-device-native</AssemblyName>
     <DefaultLanguage>en-US</DefaultLanguage>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
@@ -121,9 +121,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <SDKReference Include="WindowsDesktop, Version=10.0.10240.0">
-      <Name>Windows Desktop Extensions for the UWP</Name>
-    </SDKReference>
     <SDKReference Include="WindowsMobile, Version=10.0.10240.0">
       <Name>Windows Mobile Extensions for the UWP</Name>
     </SDKReference>

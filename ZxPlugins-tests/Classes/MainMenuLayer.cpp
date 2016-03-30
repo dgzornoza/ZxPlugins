@@ -1,5 +1,8 @@
 #include "MainMenuLayer.h"
 
+//#include "../../ZxPlugins-lib/src/PluginFactory.h"
+//#include "../../Plugins/cordova-plugin-device/proxy/Device.h"
+
 using namespace cocos2d;
 
 // Namespace anonimo para crear objetos SOLO en el ambito de este archivo cpp
@@ -18,7 +21,6 @@ namespace
 	/** Estructura para crear la lista de acciones del menu */
 	std::vector<TestList> g_testList;
 
-
 	/** Numero de elementos de la lista de acciones */
 	static int g_testListCount;
 }
@@ -29,6 +31,26 @@ MainMenuLayer::MainMenuLayer(void)
 	// inicializar lista de acciones
 	//g_testList.push_back({ "Prueba", [](){ return Scenes::Circuit::CircuitScene::create(); } });
 	
+	// TODO: prueba plugin
+	//cocos2d::zxplugin::cordova_plugin_device::Device* devicePlugin = cocos2d::zxplugin::PluginFactory::getInstance()->loadPlugin<cocos2d::zxplugin::cordova_plugin_device::Device>("cordova-plugin-device");
+	//auto a = devicePlugin->getPluginProperties();
+
+	//devicePlugin->getInfo(
+	//	[](const std::string& _result)
+	//{
+	//	OutputDebugString(L"_result");
+	//},
+	//	[](const std::string& _error) {
+	//	OutputDebugString(L"Error al invocar la funcion 'getInfo' del plugin device");
+	//	return;
+	//});
+
+	int c = 5;
+	int d = c / 1;
+
+
+
+
 
 	// guardar el numero de elementos
 	g_testListCount = g_testList.size();
@@ -62,7 +84,7 @@ bool MainMenuLayer::init()
 	// crear el menu con las acciones
 	this->_createMenu(layout);
 	// crear el boton para cerrar la aplicacion
-	this->_createCloseButton(layout);
+	//this->_createCloseButton(layout);
 
 	// inicializacion correcta
 	return true;
