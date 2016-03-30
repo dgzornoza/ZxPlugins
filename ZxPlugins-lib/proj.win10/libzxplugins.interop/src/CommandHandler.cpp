@@ -1,9 +1,6 @@
 #include "CommandHandler.h"
 
-// WinRT (Windows 10 Universal)
-//#if defined(WINRT) || defined(_WINRT_DLL)
-
-using namespace libzxplugins;
+using namespace libzxplugins_interop;
 	
 
 // anonimous namespace for global objects in cpp file
@@ -29,8 +26,5 @@ void CommandHandler::execPlatformCommand(CompletedFunc^ _successCallback, Comple
 	g_platformCommandHandler->exec(_successCallback, _errorCallback, _className, _funcName, _params);
 }
 
-
-
-//#endif // _WINRT_DLL
 
 

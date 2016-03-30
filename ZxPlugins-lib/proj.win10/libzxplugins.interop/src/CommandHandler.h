@@ -2,10 +2,7 @@
 #define __ZXPLUGIN_COMMAND_HANDLER_H__
 
 
-// WinRT (Windows 10 Universal)
-//#if defined(WINRT) || defined(_WINRT_DLL)
-
-namespace libzxplugins {
+namespace libzxplugins_interop {
 
 /**
 * delegate to invoke from platform command handler on finish command
@@ -59,8 +56,7 @@ public:
 
 };
 
-} // namespace CocosAppWinRT
+} // namespace libzxplugins_interop
 
-//#endif // _WINRT_DLL
 
 #endif /* __ZXPLUGIN_COMMAND_HANDLER_H__ */

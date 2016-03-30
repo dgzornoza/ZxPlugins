@@ -179,8 +179,8 @@
     </ClCompile>
     <Link>
       <IgnoreSpecificDefaultLibraries>MSVCRT;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>libzxplugins.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(EngineRoot)../../ZxPlugins-lib\proj.win10\Debug\libzxplugins/;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <PreBuildEvent>
       <Command>
@@ -275,8 +275,8 @@
     <Page Include="Cocos2dEngine\OpenGLESPage.xaml" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\ZxPlugins-lib\proj.win10\libzxplugins\libzxplugins.vcxproj">
-      <Project>{4d3565f7-7c84-480b-9b23-fa53ccc59be9}</Project>
+    <ProjectReference Include="..\..\..\ZxPlugins-lib\proj.win10\libzxplugins.interop\libzxplugins.interop.vcxproj">
+      <Project>{2a89bbcd-4415-4aac-9036-e3054268bfbc}</Project>
     </ProjectReference>
     <ProjectReference Include="..\..\cocos2d\cocos\2d\libcocos2d_win10\libcocos2d.vcxproj">
       <Project>{07c2895d-720c-487d-b7b4-12c293ea533f}</Project>

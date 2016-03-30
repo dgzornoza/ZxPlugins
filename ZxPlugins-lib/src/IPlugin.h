@@ -1,7 +1,6 @@
 #ifndef __ZXPLUGIN_IPLUGIN_H__
 #define __ZXPLUGIN_IPLUGIN_H__
 
-#include "CommandHandler.h"
 #include <memory>
 #include <functional>
 #include <codecvt>
@@ -98,9 +97,9 @@ namespace cocos2d { namespace zxplugin {
 		 * @param _params function parameters
 		 */
 		void exec(std::function<void(const std::string&)> _successCallback, std::function<void(const std::string&)> _errorCallback, const char* _className, const char* _funcName, std::string _params)
-		{
+		{			
 			// invoke platform handler command code			
-			libzxplugins::CommandHandler::execPlatformCommand(
+			libzxplugins_interop::CommandHandler::execPlatformCommand(
 				_wrapPlatformCallback(_successCallback), 
 				_wrapPlatformCallback(_errorCallback),
 				_convertToPlatformString(_className),
@@ -120,9 +119,9 @@ namespace cocos2d { namespace zxplugin {
 		* @param _callback c++ std::function for wrap into platform native pointer function
 		* @result platform native pointer function
 		*/
-		libzxplugins::CompletedFunc^ _wrapPlatformCallback(std::function<void(const std::string&)> _callback)
+		libzxplugins_interop::CompletedFunc^ _wrapPlatformCallback(std::function<void(const std::string&)> _callback)
 		{		
-			return ref new libzxplugins::CompletedFunc([=](Platform::String^ _param)
+			return ref new libzxplugins_interop::CompletedFunc([=](Platform::String^ _param)
 			{
 				_callback(_convertFromPlatformString(_param));
 			});
