@@ -122,6 +122,10 @@
     </SDKReference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\External\UWPCordovaPluginLib\UWPCordovaPluginLib.csproj">
+      <Project>{1a3c03e6-2646-4bd5-8934-ffee5c00b25a}</Project>
+      <Name>UWPCordovaPluginLib</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\..\..\..\ZxPlugins-lib\platform\windows\ZxPluginLibHandler\ZxPluginLibHandler.vcxproj">
       <Project>{838b0688-2433-4996-8360-d1e0cb0658c0}</Project>
       <Name>ZxPluginLibHandler</Name>
