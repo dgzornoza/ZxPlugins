@@ -1,6 +1,6 @@
 #include "MainMenuLayer.h"
 
-#include "../../ZxPlugins-lib/src/PluginFactory.h"
+#include "ZxPlugins-lib\scr\PluginFactory.h"
 #include "../../Plugins/cordova-plugin-device/proxy/Device.h"
 
 using namespace cocos2d;

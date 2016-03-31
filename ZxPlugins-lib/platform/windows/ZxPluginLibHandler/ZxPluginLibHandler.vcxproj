@@ -27,21 +27,16 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\CommandHandler.cpp" />
+    <ClCompile Include="..\src\CommandHandler.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\CommandHandler.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\libzxplugins\libzxplugins.vcxproj">
-      <Project>{b1ef5d5d-0930-48da-92c1-dc0e46c194d8}</Project>
-    </ProjectReference>
+    <ClInclude Include="..\src\CommandHandler.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{2a89bbcd-4415-4aac-9036-e3054268bfbc}</ProjectGuid>
+    <ProjectGuid>{838b0688-2433-4996-8360-d1e0cb0658c0}</ProjectGuid>
     <Keyword>WindowsRuntimeComponent</Keyword>
-    <ProjectName>libzxplugins.interop</ProjectName>
-    <RootNamespace>libzxplugins_interop</RootNamespace>
+    <ProjectName>ZxPluginLibHandler</ProjectName>
+    <RootNamespace>CocosAppWinRT.ZxPlugin</RootNamespace>
     <DefaultLanguage>en-US</DefaultLanguage>
     <MinimumVisualStudioVersion>14.0</MinimumVisualStudioVersion>
     <AppContainerApplication>true</AppContainerApplication>

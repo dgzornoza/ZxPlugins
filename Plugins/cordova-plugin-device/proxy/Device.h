@@ -1,7 +1,7 @@
 #ifndef __ZXPLUGIN_DEVICE_H__
 #define __ZXPLUGIN_DEVICE_H__
 
-#include "../../../ZxPlugins-lib/src/IPlugin.h"
+#include "ZxPlugins-lib\scr\IPlugin.h"
 
 /**
 * @addtogroup ZxPlugin

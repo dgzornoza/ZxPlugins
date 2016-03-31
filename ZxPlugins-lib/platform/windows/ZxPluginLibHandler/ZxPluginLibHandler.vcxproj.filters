@@ -2,14 +2,14 @@
 <Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <Filter Include="Resources">
-      <UniqueIdentifier>bd4d47b4-c4bd-434d-8d1f-2e902c61a2bf</UniqueIdentifier>
+      <UniqueIdentifier>89e1cfe6-3f93-4d6b-9dc3-fdd0881f00f1</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tga;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\CommandHandler.cpp" />
+    <ClCompile Include="..\src\CommandHandler.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\CommandHandler.h" />
+    <ClInclude Include="..\src\CommandHandler.h" />
   </ItemGroup>
 </Project>

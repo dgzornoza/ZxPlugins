@@ -179,8 +179,8 @@
     </ClCompile>
     <Link>
       <IgnoreSpecificDefaultLibraries>MSVCRT;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <AdditionalDependencies>libzxplugins.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(EngineRoot)../../ZxPlugins-lib\proj.win10\Debug\libzxplugins/;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <PreBuildEvent>
       <Command>
@@ -225,6 +225,9 @@
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\..\ZxPlugins-lib\scr\IPlugin.h" />
+    <ClInclude Include="..\..\..\ZxPlugins-lib\scr\PlatformHelpers.h" />
+    <ClInclude Include="..\..\..\ZxPlugins-lib\scr\PluginFactory.h" />
     <ClInclude Include="..\..\Classes\AppDelegate.h" />
     <ClInclude Include="..\..\Classes\BasicScene.h" />
     <ClInclude Include="..\..\Classes\LayerBase.h" />
@@ -251,6 +254,7 @@
     <None Include="ZxPlugins-tests_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\..\ZxPlugins-lib\scr\PluginFactory.cpp" />
     <ClCompile Include="..\..\Classes\AppDelegate.cpp" />
     <ClCompile Include="..\..\Classes\LayerBase.cpp" />
     <ClCompile Include="..\..\Classes\MainMenuLayer.cpp" />
@@ -275,8 +279,8 @@
     <Page Include="Cocos2dEngine\OpenGLESPage.xaml" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\ZxPlugins-lib\proj.win10\libzxplugins.interop\libzxplugins.interop.vcxproj">
-      <Project>{2a89bbcd-4415-4aac-9036-e3054268bfbc}</Project>
+    <ProjectReference Include="..\..\..\ZxPlugins-lib\platform\windows\ZxPluginLibHandler\ZxPluginLibHandler.vcxproj">
+      <Project>{838b0688-2433-4996-8360-d1e0cb0658c0}</Project>
     </ProjectReference>
     <ProjectReference Include="..\..\cocos2d\cocos\2d\libcocos2d_win10\libcocos2d.vcxproj">
       <Project>{07c2895d-720c-487d-b7b4-12c293ea533f}</Project>
