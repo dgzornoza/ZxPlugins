@@ -5,13 +5,20 @@ using namespace CocosAppWinRT::ZxPlugin;
 // define static map for platform command handler
 Platform::Collections::Map<Platform::String^, IPlatformCommandHandler^> CommandHandler::s_platformCommandsHandlers;
 
-/** function for set native command handler for interop with native code */
-void CommandHandler::setPlatformCommandHandler(Platform::String^ _pluginName, IPlatformCommandHandler^ _platformCommandHandler)
+void CommandHandler::addPlatformCommandHandler(Platform::String^ _pluginName, IPlatformCommandHandler^ _platformCommandHandler)
 {
+	// verify command handler and add
+	if (s_platformCommandsHandlers.HasKey(_pluginName)) return;
 	s_platformCommandsHandlers.Insert(_pluginName, _platformCommandHandler);
 }
 
-/** function for execute platform code using the input parameters */
+void CommandHandler::removePlatformCommandHandler(Platform::String^ _pluginName)
+{
+	// verify command handler and remove
+	if (!s_platformCommandsHandlers.HasKey(_pluginName)) return;
+	s_platformCommandsHandlers.Remove(_pluginName);
+}
+
 void CommandHandler::execPlatformCommand(CompletedFunc^ _successCallback, CompletedFunc^ _errorCallback, Platform::String^ _pluginName, Platform::String^ _className, Platform::String^ _funcName, Platform::String^ _params)
 {
 	// verify command handler

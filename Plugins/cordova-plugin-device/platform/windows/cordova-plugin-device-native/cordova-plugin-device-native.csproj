@@ -11,7 +11,7 @@
     <AssemblyName>cordova-plugin-device-native</AssemblyName>
     <DefaultLanguage>en-US</DefaultLanguage>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
-    <TargetPlatformVersion>10.0.10586.0</TargetPlatformVersion>
+    <TargetPlatformVersion>10.0.10240.0</TargetPlatformVersion>
     <TargetPlatformMinVersion>10.0.10240.0</TargetPlatformMinVersion>
     <MinimumVisualStudioVersion>14</MinimumVisualStudioVersion>
     <FileAlignment>512</FileAlignment>
@@ -112,18 +112,20 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Device.cs" />
+    <Compile Include="PlatformCommandHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\cordova_plugin_device_native.rd.xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Reference Include="UWPCordovaBaseLib">
-      <HintPath>..\..\..\..\..\External\UWPCordovaPluginLib\bin\Debug\UWPCordovaBaseLib.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <SDKReference Include="WindowsMobile, Version=10.0.10240.0">
       <Name>Windows Mobile Extensions for the UWP</Name>
     </SDKReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\ZxPlugins-lib\platform\windows\ZxPluginLibHandler\ZxPluginLibHandler.vcxproj">
+      <Project>{838b0688-2433-4996-8360-d1e0cb0658c0}</Project>
+      <Name>ZxPluginLibHandler</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>

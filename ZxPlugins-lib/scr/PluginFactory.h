@@ -65,6 +65,9 @@ namespace cocos2d {
 				plugin =(TPlugin*) m_pluginsMap[_pluginName].get();
 			}
 		
+			// add platform command handler
+			CocosAppWinRT::ZxPlugin::CommandHandler::
+
 			// return loaded plugin
 			return plugin;
 		}

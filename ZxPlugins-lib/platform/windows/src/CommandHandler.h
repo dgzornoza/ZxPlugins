@@ -43,11 +43,18 @@ namespace CocosAppWinRT	{
 
 		public:
 
-			/** function for set platform command handler for interop with platform code. This function should be invoked from native code for set 'PlatformCommandHandler'
+			/** (Internal use only). Function for add platform command handler for interop with platform code.
 			@param _pluginName unique name for plugin identity (shoud be unique on all plugins)
 			@param _platformCommandHandler Object with platform command handler
+			@remarks This function should be invoked for factory code for set 'PlatformCommandHandler' on load plugin
 			*/
-			static void setPlatformCommandHandler(Platform::String^ _pluginName, IPlatformCommandHandler^ _platformCommandHandler);
+			static void addPlatformCommandHandler(Platform::String^ _pluginName, IPlatformCommandHandler^ _platformCommandHandler);
+
+			/** (Internal use only). Function for remove platform command handler for interop with platform code.
+			@param _pluginName unique name for plugin identity to remove from platform command handler (shoud be unique on all plugins)
+			@remarks This function should be invoked for factory code for remove 'PlatformCommandHandler' on unload plugin
+			*/
+			static void removePlatformCommandHandler(Platform::String^ _pluginName);
 
 			/** function for execute platform code using the input parameters
 			* @param _successCallback callback for success result
