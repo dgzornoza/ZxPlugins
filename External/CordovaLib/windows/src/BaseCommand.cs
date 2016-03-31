@@ -34,7 +34,7 @@ namespace CocosAppWinRT.ZxPlugin.Cordova
         public BaseCommand()
         {
             ResultHandlers = new Dictionary<string, EventHandler<PluginResult>>();
-            Window.Current.Activated += this.OnActivated;
+            //Window.Current.Activated += this.OnActivated;
         }
 
 
@@ -144,7 +144,7 @@ namespace CocosAppWinRT.ZxPlugin.Cordova
 
         public void Dispose()
         {
-            Window.Current.Activated -= this.OnActivated;
+            //Window.Current.Activated -= this.OnActivated;
             this.OnCommandResult = null;
         }
 

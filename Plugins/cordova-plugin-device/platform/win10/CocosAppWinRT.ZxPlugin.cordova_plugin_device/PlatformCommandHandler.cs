@@ -33,7 +33,7 @@ namespace CocosAppWinRT.ZxPlugin.cordova_plugin_device
             try
             {
                 // create service
-                BaseCommand service = CommandFactory.CreateByServiceName(_className);
+                BaseCommand service = CommandFactory.CreateByServiceName("cordova_plugin_device." + _className);
                 if (service == null)
                 {
                     _errorCallback.Invoke(new PluginResult(PluginResult.Status.CLASS_NOT_FOUND_EXCEPTION).ToJSONString());

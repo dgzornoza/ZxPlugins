@@ -71,7 +71,7 @@ namespace cocos2d { namespace zxplugin { namespace cordova_plugin_device {
 		{
 			// invoke native code
 			this->exec(_successCallback, _errorCallback, 
-				"org.apache.cordova.device", "getDeviceInfo", "[]");
+				"Device", "getDeviceInfo", "[]");
 
 			//this->exec(
 			//	_successCallback, _errorCallback,
