@@ -36,9 +36,13 @@ void PluginFactory::unloadPlugin(const char* _pluginName)
 	// if not found, return
 	if (it == m_pluginsMap.end()) return;
 
-	// delete plugin and erase key/value from plugins map
-	if (it->second != nullptr) it->second = nullptr;
-	m_pluginsMap.erase(it);
+	// verify plugin
+	if (it->second != nullptr) it->second = nullptr;	
+	
+	// remove platform command handler
+	CocosAppWinRT::ZxPlugin::CommandHandler::removePlatformCommandHandler(convertToPlatformString(it->second->getPluginProperties()->Name));
 
+	// delete plugin and erase key / value from plugins map
+	m_pluginsMap.erase(it);
 
 }

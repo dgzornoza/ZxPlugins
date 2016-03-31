@@ -18,9 +18,9 @@ using System.Diagnostics;
 using System.Collections.Generic;
 using Windows.UI.Xaml;
 
-namespace UWPCordovaPluginLib.Cordova
+namespace CocosAppWinRT.ZxPlugin.Cordova
 {
-    public abstract class BaseCommand : IDisposable
+    abstract class BaseCommand : IDisposable
     {
         /*
          *  All commands + plugins must extend BaseCommand, because they are dealt with as BaseCommands in CordovaView.xaml.cs
@@ -28,8 +28,6 @@ namespace UWPCordovaPluginLib.Cordova
          **/
 
         public event EventHandler<PluginResult> OnCommandResult;
-
-        public event EventHandler<ScriptCallback> OnCustomScript;
 
         public string CurrentCommandCallbackId { get; set; }
 
@@ -88,19 +86,6 @@ namespace UWPCordovaPluginLib.Cordova
 
             throw new MissingMethodException(methodName);
 
-        }
-
-        [Obsolete]
-        public void InvokeCustomScript(ScriptCallback script, bool removeHandler)
-        {
-            if (this.OnCustomScript != null)
-            {
-                this.OnCustomScript(this, script);
-                if (removeHandler)
-                {
-                    this.OnCustomScript = null;
-                }
-            }
         }
 
         public void DispatchCommandResult()
@@ -166,7 +151,6 @@ namespace UWPCordovaPluginLib.Cordova
         public void DetachHandlers()
         {
             this.OnCommandResult = null;
-            this.OnCustomScript = null;
             foreach (string callbackId in new List<string>(ResultHandlers.Keys))
             {
                 RemoveResultHandler(callbackId);

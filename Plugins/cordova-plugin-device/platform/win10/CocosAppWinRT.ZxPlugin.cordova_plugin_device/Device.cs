@@ -1,14 +1,15 @@
 ﻿using System;
-using UWPCordovaPluginLib.Cordova;
 using Windows.ApplicationModel.Resources;
 using Windows.System.Profile;
 
-namespace org.apache.cordova.device
+using CocosAppWinRT.ZxPlugin.Cordova;
+
+namespace CocosAppWinRT.ZxPlugin.cordova_plugin_device
 {
     /// <summary>
     /// Class for define device info cordova plugin
     /// </summary>
-    public class Device : BaseCommand
+    class Device : BaseCommand
     {
 
 

@@ -19,12 +19,12 @@ using System.Text;
 using System.Diagnostics;
 using Newtonsoft.Json;
 
-namespace UWPCordovaPluginLib.Cordova
+namespace CocosAppWinRT.ZxPlugin.Cordova
 {
     /// <summary>
     /// Provides JSON serialization/deserialization functionality.
     /// </summary>
-    public static class JsonHelper
+    static class JsonHelper
     {
         /// <summary>
         /// Serializes object to JSON string representation

@@ -1,0 +1,15 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "CocosAppWinRT.ZxPlugin.Cordova", "CocosAppWinRT.ZxPlugin.Cordova.shproj", "{07264E75-3F9F-4D98-8709-C5982BE7DA31}"
+EndProject
+Global
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		CocosAppWinRT.ZxPlugin.CordovaLib.projitems*{07264e75-3f9f-4d98-8709-c5982be7da31}*SharedItemsImports = 13
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

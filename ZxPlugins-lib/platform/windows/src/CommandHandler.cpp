@@ -21,6 +21,7 @@ void CommandHandler::removePlatformCommandHandler(Platform::String^ _pluginName)
 
 void CommandHandler::execPlatformCommand(CompletedFunc^ _successCallback, CompletedFunc^ _errorCallback, Platform::String^ _pluginName, Platform::String^ _className, Platform::String^ _funcName, Platform::String^ _params)
 {
+
 	// verify command handler
 	if (!s_platformCommandsHandlers.HasKey(_pluginName)) return;
 		

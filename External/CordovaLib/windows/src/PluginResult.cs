@@ -15,12 +15,12 @@
 using System;
 using System.Text;
 
-namespace UWPCordovaPluginLib.Cordova
+namespace CocosAppWinRT.ZxPlugin.Cordova
 {
     /// <summary>
     /// Represents command execution result
     /// </summary>
-    public class PluginResult : EventArgs
+    class PluginResult : EventArgs
     {
         /// <summary>
         /// Predefined resultant messages

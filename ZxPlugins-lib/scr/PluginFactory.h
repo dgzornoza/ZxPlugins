@@ -64,9 +64,9 @@ namespace cocos2d {
 				m_pluginsMap[_pluginName] = std::make_shared<TPlugin>();
 				plugin =(TPlugin*) m_pluginsMap[_pluginName].get();
 			}
-		
+						
 			// add platform command handler
-			CocosAppWinRT::ZxPlugin::CommandHandler::
+			CocosAppWinRT::ZxPlugin::CommandHandler::addPlatformCommandHandler(convertToPlatformString(static_cast<IPlugin*>(plugin)->getPluginProperties()->Name), ref new CocosAppWinRT::ZxPlugin::cordova_plugin_device::PlatformCommandHandler());
 
 			// return loaded plugin
 			return plugin;

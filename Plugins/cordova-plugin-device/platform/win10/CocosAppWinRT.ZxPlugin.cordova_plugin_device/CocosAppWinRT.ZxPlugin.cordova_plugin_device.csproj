@@ -5,10 +5,10 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{2A88D3C4-5E5F-45DF-9A65-BC177F5E1C0B}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <OutputType>winmdobj</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>org.apache.cordova.device</RootNamespace>
-    <AssemblyName>cordova-plugin-device-native</AssemblyName>
+    <RootNamespace>CocosAppWinRT.ZxPlugin.cordova_plugin_device</RootNamespace>
+    <AssemblyName>CocosAppWinRT.ZxPlugin.cordova_plugin_device</AssemblyName>
     <DefaultLanguage>en-US</DefaultLanguage>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
     <TargetPlatformVersion>10.0.10240.0</TargetPlatformVersion>
@@ -46,8 +46,8 @@
     <PlatformTarget>x86</PlatformTarget>
     <UseVSHostingProcess>false</UseVSHostingProcess>
     <ErrorReport>prompt</ErrorReport>
-    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
-    <DocumentationFile>bin\x86\Debug\cordova-plugin-device-native.XML</DocumentationFile>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DocumentationFile>bin\x86\Debug\CocosAppWinRT.ZxPlugin.cordova_plugin_device.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
     <PlatformTarget>x86</PlatformTarget>
@@ -114,7 +114,6 @@
     <Compile Include="Device.cs" />
     <Compile Include="PlatformCommandHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Properties\cordova_plugin_device_native.rd.xml" />
   </ItemGroup>
   <ItemGroup>
     <SDKReference Include="WindowsMobile, Version=10.0.10240.0">
@@ -122,17 +121,17 @@
     </SDKReference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\..\External\UWPCordovaPluginLib\UWPCordovaPluginLib.csproj">
-      <Project>{1a3c03e6-2646-4bd5-8934-ffee5c00b25a}</Project>
-      <Name>UWPCordovaPluginLib</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\..\..\..\ZxPlugins-lib\platform\windows\ZxPluginLibHandler\ZxPluginLibHandler.vcxproj">
       <Project>{838b0688-2433-4996-8360-d1e0cb0658c0}</Project>
       <Name>ZxPluginLibHandler</Name>
     </ProjectReference>
   </ItemGroup>
+  <Import Project="..\..\..\..\..\External\CordovaLib\windows\CocosAppWinRT.ZxPlugin.CordovaLib.projitems" Label="Shared" />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
   </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
