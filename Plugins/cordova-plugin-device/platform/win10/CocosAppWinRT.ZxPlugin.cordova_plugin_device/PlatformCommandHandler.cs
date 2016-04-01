@@ -36,7 +36,7 @@ namespace CocosAppWinRT.ZxPlugin.cordova_plugin_device
                 BaseCommand service = CommandFactory.CreateByServiceName("cordova_plugin_device." + _className);
                 if (service == null)
                 {
-                    _errorCallback.Invoke(new PluginResult(PluginResult.Status.CLASS_NOT_FOUND_EXCEPTION).ToJSONString());
+                    _errorCallback.Invoke(new PluginResult(PluginResult.Status.CLASS_NOT_FOUND_EXCEPTION, $"ERROR: Class not found :: {_className}:{_funcName}").ToJSONString());
                     return;
                 }
 
@@ -66,12 +66,9 @@ namespace CocosAppWinRT.ZxPlugin.cordova_plugin_device
                     }
                     catch (Exception ex)
                     {
-                        // LOG and remove current command result handler
-                        Debug.WriteLine($"ERROR: Exception in ProcessCommand :: .{ex.Message}.");
+                        // remove current command result handler and invoke error
                         service.RemoveResultHandler(callbackId);
-
-                        Debug.WriteLine($"ERROR: failed to InvokeMethodNamed :: .{_funcName}. on Object :: .{_className}.");
-                        _errorCallback.Invoke(new PluginResult(PluginResult.Status.INVALID_ACTION).ToJSONString());
+                        _errorCallback.Invoke(new PluginResult(PluginResult.Status.INVALID_ACTION, $"ERROR: Exception in ProcessCommand  :: {_funcName} on Object :: {_className} :: {ex.Message}").ToJSONString());
                         return;
                     }
                 });
@@ -80,8 +77,7 @@ namespace CocosAppWinRT.ZxPlugin.cordova_plugin_device
             catch (Exception ex)
             {
                 // ERROR
-                Debug.WriteLine($"ERROR: Unable to execute command :: .{_className}.:.{_funcName}.:.{ex.Message}.");
-                _errorCallback.Invoke(new PluginResult(PluginResult.Status.ERROR).ToJSONString());
+                _errorCallback.Invoke(new PluginResult(PluginResult.Status.ERROR, $"ERROR: Unable to execute command :: {_className}:{_funcName}:{ex.Message}").ToJSONString());
                 return;
             }
 
