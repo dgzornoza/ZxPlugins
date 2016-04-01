@@ -7,7 +7,7 @@
     <ProjectGuid>{2A88D3C4-5E5F-45DF-9A65-BC177F5E1C0B}</ProjectGuid>
     <OutputType>winmdobj</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CocosAppWinRT.ZxPlugin.cordova_plugin_device</RootNamespace>
+    <RootNamespace>CocosAppWinRT.ZxPlugin</RootNamespace>
     <AssemblyName>CocosAppWinRT.ZxPlugin.cordova_plugin_device</AssemblyName>
     <DefaultLanguage>en-US</DefaultLanguage>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
@@ -111,8 +111,8 @@
     <PRIResource Include="Resources\en-US\Resources.resw" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Device.cs" />
-    <Compile Include="PlatformCommandHandler.cs" />
+    <Compile Include="src\Device.cs" />
+    <Compile Include="src\PlatformCommandHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -120,13 +120,8 @@
       <Name>Windows Mobile Extensions for the UWP</Name>
     </SDKReference>
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\..\..\..\ZxPlugins-lib\platform\windows\ZxPluginLibHandler\ZxPluginLibHandler.vcxproj">
-      <Project>{838b0688-2433-4996-8360-d1e0cb0658c0}</Project>
-      <Name>ZxPluginLibHandler</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="..\..\..\..\..\External\CordovaLib\windows\CocosAppWinRT.ZxPlugin.CordovaLib.projitems" Label="Shared" />
+  <Import Project="..\..\..\..\..\ZxPlugins-lib\platform\win10\ZxPluginLibHandler\ZxPluginLibHandler.projitems" Label="Shared" />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>

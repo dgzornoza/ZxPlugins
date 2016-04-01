@@ -8,9 +8,13 @@ namespace CocosAppWinRT.ZxPlugin.cordova_plugin_device
     /// <summary>
     /// Class for implement native platform command handler for call from ZxPlugins
     /// </summary>
-    public sealed class PlatformCommandHandler : CocosAppWinRT.ZxPlugin.IPlatformCommandHandler
+    public sealed class PlatformCommandHandler : IPlatformCommandHandler
     {
-        
+        /// <summary>
+        /// Default constructor
+        /// </summary>
+        //public PlatformCommandHandler() { }
+
         /// <summary>
         /// Function for implement in platform command handler for execute platform code
         /// </summary>

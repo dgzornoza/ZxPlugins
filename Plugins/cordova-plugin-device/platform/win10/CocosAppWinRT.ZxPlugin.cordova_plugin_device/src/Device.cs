@@ -101,8 +101,6 @@ namespace CocosAppWinRT.ZxPlugin.cordova_plugin_device
                 $"\"manufacturer\":\"{manufacturer}\"," +
                 $"\"isVirtual\":{isVirtual}";
 
-            int a = 0;
-            int b = 5 / a;
             // dispatch cordova plugin result
             DispatchCommandResult(new PluginResult(PluginResult.Status.OK, "{" + result + "}"));
 
