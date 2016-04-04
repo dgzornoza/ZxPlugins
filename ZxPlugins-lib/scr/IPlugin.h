@@ -98,7 +98,9 @@ namespace cocos2d {
 			 * @param _params function parameters
 			 */
 			void exec(std::function<void(const std::string&)> _successCallback, std::function<void(const std::string&)> _errorCallback, const char* _className, const char* _funcName, std::string _params)
-			{			
+			{		
+
+#if defined CC_PLATFORM_WINRT
 				// invoke platform handler command code								
 				CocosAppWinRT::ZxPlugin::CommandHandler::execPlatformCommand(
 					wrapPlatformCallback(_successCallback),
@@ -108,7 +110,7 @@ namespace cocos2d {
 					convertToPlatformString(_funcName),
 					convertToPlatformString(_params));
 			};
-	
+#endif	
 
 
 		private:

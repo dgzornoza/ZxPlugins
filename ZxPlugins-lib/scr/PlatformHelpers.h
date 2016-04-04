@@ -1,6 +1,8 @@
 #ifndef __ZXPLUGIN_PLATFORM_HELPERS_H__
 #define __ZXPLUGIN_PLATFORM_HELPERS_H__
 
+#if defined CC_PLATFORM_WINRT
+
 #include <codecvt>
 
 namespace cocos2d {
@@ -49,5 +51,7 @@ namespace cocos2d {
 
 	} // namespace cocos2d 
 } // namespace zxplugin
+
+#endif
 
 #endif /* __ZXPLUGIN_PLATFORM_HELPERS_H__ */

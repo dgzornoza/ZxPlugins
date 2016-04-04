@@ -88,7 +88,7 @@ void MainMenuLayer::_createMenu(ui::Layout* _layout)
     }
 	
 	// eventos de seleccion de items
-	lv->addEventListener((ui::ListView::ccListViewCallback)[](Ref* _sender, ui::ListView::EventType _type)		
+	lv->addEventListener(static_cast<ui::ListView::ccListViewCallback>([](Ref* _sender, ui::ListView::EventType _type)		
 	{
 		// evaluar el tipo de evento generado
 		switch (_type)
@@ -129,7 +129,7 @@ void MainMenuLayer::_createMenu(ui::Layout* _layout)
 
 			break;
 		}
-	});
+	}));
 
 
 	// añadir el listview al layout
