@@ -1,7 +1,6 @@
 #include "MainMenuLayer.h"
-
-//#include "ZxPlugins-lib\scr\PluginFactory.h"
-//#include "../../Plugins/cordova-plugin-device/proxy/Device.h"
+#include "BasicScene.h"
+#include "Tests.h"
 
 using namespace cocos2d;
 
@@ -29,27 +28,7 @@ namespace
 MainMenuLayer::MainMenuLayer(void)
 {
 	// inicializar lista de acciones
-	//g_testList.push_back({ "Prueba", [](){ return Scenes::Circuit::CircuitScene::create(); } });
-	
-	// TODO: prueba plugin
-	// cocos2d::zxplugin::cordova_plugin_device::Device* devicePlugin = cocos2d::zxplugin::PluginFactory::getInstance()->loadPlugin<cocos2d::zxplugin::cordova_plugin_device::Device>("cordova-plugin-device");
-	// auto a = devicePlugin->getPluginProperties();
-
-	// devicePlugin->getInfo(
-		// [](const std::string& _result)
-	// {
-		// OutputDebugString(L"_result");
-	// },
-		// [](const std::string& _error) {
-		// OutputDebugString(L"Error al invocar la funcion 'getInfo' del plugin device");
-		// return;
-	// });
-
-	int c = 5;
-	int d = c / 1;
-
-
-
+	g_testList.push_back({ "Cordova Plugin Device", []() { return BasicScene<cordova_plugin_device_test>::create(); } });
 
 
 	// guardar el numero de elementos
@@ -102,55 +81,55 @@ void MainMenuLayer::_createMenu(ui::Layout* _layout)
 	// añadir toddas las acciones al list view
 	for (int i = 0; i < g_testListCount; ++i)
     {
-		ui::Text* text = ui::Text::create(g_testList[i].name, "fonts/AveriaSansLibre-Bold.ttf", 30);
+		ui::Text* text = ui::Text::create(g_testList[i].name, "Arial", 30);
 		text->setColor(Color3B(159, 168, 176));
 		text->setTouchEnabled(true);
 		lv->pushBackCustomItem(text);
     }
 	
-	//// eventos de seleccion de items
-	//lv->addEventListener((ui::ListView::ccListViewCallback)[](Ref* _sender, ui::ListView::EventType _type)		
-	//{
-	//	// evaluar el tipo de evento generado
-	//	switch (_type)
-	//	{
+	// eventos de seleccion de items
+	lv->addEventListener((ui::ListView::ccListViewCallback)[](Ref* _sender, ui::ListView::EventType _type)		
+	{
+		// evaluar el tipo de evento generado
+		switch (_type)
+		{
 
-	//	case cocos2d::ui::ListView::EventType::ON_SELECTED_ITEM_END:
+		case cocos2d::ui::ListView::EventType::ON_SELECTED_ITEM_END:
 
-	//		// obtener el listview
-	//		ui::ListView* lv = static_cast<ui::ListView*>(_sender);
-	//		// obtener el indice del elemento seleccionado y el item seleccionado
-	//		ssize_t selectedIndex = lv->getCurSelectedIndex();
-	//		ui::Widget* selectedItem = lv->getItem(selectedIndex);
-	//		
-	//		// crear acciones para dar efecto al item seleccionado y cambiar a la escena que impelemnta la accion cuando finalicen
-	//		//selectedItem->runAction(TintTo::create(1.0f, 0x0, 0xFF, 0x0));
-	//		//selectedItem->runAction(Sequence::create(DelayTime::create(.3f), ScaleTo::create(.7f, 1.0f, .0f), nullptr));
-	//		//selectedItem->runAction(Sequence::create(				
-	//		//	Sequence::create(MoveBy::create(.3f, Vec2(-20.0f, .0f)), MoveBy::create(.7f, Vec2(500.0f, .0f)), nullptr),
-	//		//	CallFunc::create([selectedIndex]()
-	//		//	{
-	//		//		// eliminar todos los datos de la cache de esta capa
-	//		//		Director::getInstance()->purgeCachedData();
+			// obtener el listview
+			ui::ListView* lv = static_cast<ui::ListView*>(_sender);
+			// obtener el indice del elemento seleccionado y el item seleccionado
+			ssize_t selectedIndex = lv->getCurSelectedIndex();
+			ui::Widget* selectedItem = lv->getItem(selectedIndex);
+			
+			// crear acciones para dar efecto al item seleccionado y cambiar a la escena que impelemnta la accion cuando finalicen
+			selectedItem->runAction(TintTo::create(1.0f, 0x0, 0xFF, 0x0));
+			selectedItem->runAction(Sequence::create(DelayTime::create(.3f), ScaleTo::create(.7f, 1.0f, .0f), nullptr));
+			selectedItem->runAction(Sequence::create(				
+				Sequence::create(MoveBy::create(.3f, Vec2(-20.0f, .0f)), MoveBy::create(.7f, Vec2(500.0f, .0f)), nullptr),
+				CallFunc::create([selectedIndex]()
+				{
+					// eliminar todos los datos de la cache de esta capa
+					Director::getInstance()->purgeCachedData();
 
-	//		//		// crear la escena con el ejemplo seleccionado por el indice del listview
-	//		//		Scene* scene = g_testList[selectedIndex].callback();
+					// crear la escena con el ejemplo seleccionado por el indice del listview
+					Scene* scene = g_testList[selectedIndex].callback();
 
-	//		//		// cambiar a la escena con la accion
-	//		//		Director::getInstance()->replaceScene(scene);
-	//		//	}),
-	//		//	nullptr));
-	//		
-	//		// eliminar todos los datos de la cache de esta capa
-	//		Director::getInstance()->purgeCachedData();
-	//		// crear la escena con el ejemplo seleccionado por el indice del listview
-	//		Scene* scene = g_testList[selectedIndex].callback();
-	//		// cambiar a la escena con la accion
-	//		Director::getInstance()->pushScene(scene);
+					// cambiar a la escena con la accion
+					Director::getInstance()->replaceScene(scene);
+				}),
+				nullptr));
+			
+			// eliminar todos los datos de la cache de esta capa
+			Director::getInstance()->purgeCachedData();
+			// crear la escena con el ejemplo seleccionado por el indice del listview
+			Scene* scene = g_testList[selectedIndex].callback();
+			// cambiar a la escena con la accion
+			Director::getInstance()->pushScene(scene);
 
-	//		break;
-	//	}
-	//});
+			break;
+		}
+	});
 
 
 	// añadir el listview al layout

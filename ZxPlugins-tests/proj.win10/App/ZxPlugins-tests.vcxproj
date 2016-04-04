@@ -230,6 +230,9 @@
     <ClInclude Include="..\..\..\ZxPlugins-lib\scr\PluginFactory.h" />
     <ClInclude Include="..\..\Classes\AppDelegate.h" />
     <ClInclude Include="..\..\Classes\BasicScene.h" />
+    <ClInclude Include="..\..\Classes\cordova_plugin_device_test\cordova_plugin_device_test.h" />
+    <ClInclude Include="..\..\Classes\Tests.h" />
+    <ClInclude Include="..\..\Classes\Infraestructure.h" />
     <ClInclude Include="..\..\Classes\LayerBase.h" />
     <ClInclude Include="..\..\Classes\MainMenuLayer.h" />
     <ClInclude Include="App.xaml.h">
@@ -256,6 +259,7 @@
   <ItemGroup>
     <ClCompile Include="..\..\..\ZxPlugins-lib\scr\PluginFactory.cpp" />
     <ClCompile Include="..\..\Classes\AppDelegate.cpp" />
+    <ClCompile Include="..\..\Classes\cordova_plugin_device_test\cordova_plugin_device_test.cpp" />
     <ClCompile Include="..\..\Classes\LayerBase.cpp" />
     <ClCompile Include="..\..\Classes\MainMenuLayer.cpp" />
     <ClCompile Include="App.xaml.cpp">

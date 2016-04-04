@@ -17,6 +17,9 @@
     <Filter Include="ZxPlugins">
       <UniqueIdentifier>{25781a5b-a6d0-456b-9549-ab31383c2fc5}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Classes\cordova_plugin_device_test">
+      <UniqueIdentifier>{c711e6cd-2947-4990-a66d-b3b9e052486d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml" />
@@ -42,6 +45,9 @@
     </ClCompile>
     <ClCompile Include="..\..\..\ZxPlugins-lib\scr\PluginFactory.cpp">
       <Filter>ZxPlugins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Classes\cordova_plugin_device_test\cordova_plugin_device_test.cpp">
+      <Filter>Classes\cordova_plugin_device_test</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -74,6 +80,15 @@
     </ClInclude>
     <ClInclude Include="..\..\..\ZxPlugins-lib\scr\PluginFactory.h">
       <Filter>ZxPlugins</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\cordova_plugin_device_test\cordova_plugin_device_test.h">
+      <Filter>Classes\cordova_plugin_device_test</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\Infraestructure.h">
+      <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Classes\Tests.h">
+      <Filter>Classes</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
