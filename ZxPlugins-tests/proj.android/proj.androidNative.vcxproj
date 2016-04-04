@@ -40,7 +40,7 @@
     </NMakePreprocessorDefinitions>
     <NMakeIncludeSearchPath>$(NMakeIncludeSearchPath)</NMakeIncludeSearchPath>
     <NMakeBuildCommandLine>"$(VS_NdkRoot)\ndk-build.cmd" NDK_DEBUG=1</NMakeBuildCommandLine>
-    <OutDir>$(ProjectDir)\$(Platform)\$(Configuration)\</OutDir>
+    <OutDir>$(ProjectDir)\build\$(Platform)\$(Configuration)\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'" Label="Configuration">
     <ConfigurationType>Makefile</ConfigurationType>
@@ -50,7 +50,7 @@
     <NMakeIncludeSearchPath>
     </NMakeIncludeSearchPath>
     <NMakeBuildCommandLine>"$(VS_NdkRoot)\ndk-build.cmd" NDK_DEBUG=1</NMakeBuildCommandLine>
-    <OutDir>$(ProjectDir)\$(Platform)\$(Configuration)\</OutDir>
+    <OutDir>$(ProjectDir)\build\$(Platform)\$(Configuration)\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x86'" Label="Configuration">
     <ConfigurationType>Makefile</ConfigurationType>
@@ -78,10 +78,12 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
     <NMakeBuildCommandLine>"$(VS_NdkRoot)\ndk-build.cmd" NDK_DEBUG=1</NMakeBuildCommandLine>
     <NMakeReBuildCommandLine>"$(VS_NdkRoot)\ndk-build.cmd" -B NDK_DEBUG=1</NMakeReBuildCommandLine>
+    <IntDir>$(ProjectDir)\build\$(Platform)\$(Configuration)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x86'">
     <NMakeBuildCommandLine>"$(VS_NdkRoot)\ndk-build.cmd" NDK_DEBUG=1</NMakeBuildCommandLine>
     <NMakeReBuildCommandLine>"$(VS_NdkRoot)\ndk-build.cmd" -B NDK_DEBUG=1</NMakeReBuildCommandLine>
+    <IntDir>$(ProjectDir)\build\$(Platform)\$(Configuration)\</IntDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x86'">
   </ItemDefinitionGroup>

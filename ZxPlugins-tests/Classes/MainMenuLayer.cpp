@@ -1,7 +1,7 @@
 #include "MainMenuLayer.h"
 
-#include "ZxPlugins-lib\scr\PluginFactory.h"
-#include "../../Plugins/cordova-plugin-device/proxy/Device.h"
+//#include "ZxPlugins-lib\scr\PluginFactory.h"
+//#include "../../Plugins/cordova-plugin-device/proxy/Device.h"
 
 using namespace cocos2d;
 
@@ -32,18 +32,18 @@ MainMenuLayer::MainMenuLayer(void)
 	//g_testList.push_back({ "Prueba", [](){ return Scenes::Circuit::CircuitScene::create(); } });
 	
 	// TODO: prueba plugin
-	cocos2d::zxplugin::cordova_plugin_device::Device* devicePlugin = cocos2d::zxplugin::PluginFactory::getInstance()->loadPlugin<cocos2d::zxplugin::cordova_plugin_device::Device>("cordova-plugin-device");
-	auto a = devicePlugin->getPluginProperties();
+	// cocos2d::zxplugin::cordova_plugin_device::Device* devicePlugin = cocos2d::zxplugin::PluginFactory::getInstance()->loadPlugin<cocos2d::zxplugin::cordova_plugin_device::Device>("cordova-plugin-device");
+	// auto a = devicePlugin->getPluginProperties();
 
-	devicePlugin->getInfo(
-		[](const std::string& _result)
-	{
-		OutputDebugString(L"_result");
-	},
-		[](const std::string& _error) {
-		OutputDebugString(L"Error al invocar la funcion 'getInfo' del plugin device");
-		return;
-	});
+	// devicePlugin->getInfo(
+		// [](const std::string& _result)
+	// {
+		// OutputDebugString(L"_result");
+	// },
+		// [](const std::string& _error) {
+		// OutputDebugString(L"Error al invocar la funcion 'getInfo' del plugin device");
+		// return;
+	// });
 
 	int c = 5;
 	int d = c / 1;

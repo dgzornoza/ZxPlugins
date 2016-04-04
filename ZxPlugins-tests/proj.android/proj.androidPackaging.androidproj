@@ -28,7 +28,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'" Label="Configuration">
     <UseDebugLibraries>true</UseDebugLibraries>
     <TargetName>$(RootNamespace)</TargetName>
-    <OutDir>$(ProjectDir)\$(Platform)\$(Configuration)\</OutDir>
+    <OutDir>$(ProjectDir)\build\$(Platform)\$(Configuration)\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'" Label="Configuration">
     <UseDebugLibraries>false</UseDebugLibraries>
@@ -38,7 +38,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x86'" Label="Configuration">
     <UseDebugLibraries>true</UseDebugLibraries>
     <TargetName>$(RootNamespace)</TargetName>
-    <OutDir>$(ProjectDir)\$(Platform)\$(Configuration)\</OutDir>
+    <OutDir>$(ProjectDir)\build\$(Platform)\$(Configuration)\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x86'" Label="Configuration">
     <UseDebugLibraries>false</UseDebugLibraries>
@@ -63,7 +63,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x86'">
     <AntPackage>
       <WorkingDirectory>$(ProjectDir)</WorkingDirectory>
-      <ApplicationName>proj.android</ApplicationName>
+      <ApplicationName>$(TargetName)</ApplicationName>
     </AntPackage>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x86'">
@@ -73,14 +73,13 @@
     </AntPackage>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <AndroidManifest Include="AndroidManifest.xml" />
+    <AndroidManifest Include="AndroidManifest.xml">
+      <SubType>Designer</SubType>
+    </AndroidManifest>
     <AntProjectPropertiesFile Include="ant.properties" />
     <AntProjectPropertiesFile Include="local.properties" />
     <AntProjectPropertiesFile Include="project.properties" />
     <AntBuildXml Include="build.xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="D:\Projects\Libraries\ZxPlugins\ZxPlugins-tests\proj.android\proj.androidNative.vcxproj" />
   </ItemGroup>
   <ItemGroup>
     <Content Include=".classpath" />
