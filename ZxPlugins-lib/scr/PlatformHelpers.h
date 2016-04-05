@@ -1,7 +1,9 @@
 #ifndef __ZXPLUGIN_PLATFORM_HELPERS_H__
 #define __ZXPLUGIN_PLATFORM_HELPERS_H__
 
-#if defined CC_PLATFORM_WINRT
+#include "cocos2d.h"
+
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_WINRT)
 
 #include <codecvt>
 

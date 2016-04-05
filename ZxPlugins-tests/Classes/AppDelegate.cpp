@@ -45,22 +45,21 @@ bool AppDelegate::applicationDidFinishLaunching()
     auto director = Director::getInstance();
     auto glview = director->getOpenGLView();
     if(!glview) {
-#ifdef WINRT
+
         glview = GLViewImpl::create("SamplesGLView"); // 3:2
-#else
 		//glview = GLViewImpl::createWithRect("SamplesGLView", Rect(0,0, 1280, 1024)); // 5:4
 		//glview = GLViewImpl::createWithRect("SamplesGLView", Rect(0,0, 1280, 720)); // 16:9
 		//glview = GLViewImpl::createWithRect("SamplesGLView", Rect(0,0, 1067, 600)); // 16:9
 
 		//glview = GLViewImpl::createWithRect("SamplesGLView", Rect(0,0, 960, 640)); // 3:2
-		glview = GLViewImpl::createWithRect("SamplesGLView", Rect(0,0, 480, 320)); // 3:2
+		//glview = GLViewImpl::createWithRect("SamplesGLView", Rect(0,0, 480, 320)); // 3:2
 		//glview = GLViewImpl::createWithRect("SamplesGLView", Rect(0,0, 1024, 768)); // 4:3
 		//glview = GLViewImpl::createWithRect("SamplesGLView", Rect(0,0, 1280, 768)); // 5:3
 		//glview = GLViewImpl::createWithRect("SamplesGLView", Rect(0,0, 1280, 720)); // 16:9
 
 		// portrait
 		//glview = GLView::createWithRect("SamplesGLView", Rect(0,0, 640, 960)); // 3:2
-#endif
+
         director->setOpenGLView(glview);
     }
 

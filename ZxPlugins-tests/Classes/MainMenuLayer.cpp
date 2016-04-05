@@ -54,7 +54,11 @@ bool MainMenuLayer::init()
 
 	// cachear los spriteframes del menu
 	//SpriteFrameCache::getInstance()->addSpriteFramesWithFile("MainMenu/gui.plist", "MainMenu/gui.png");
-	    
+
+	// TODO: background prueba
+	auto sprite = Sprite::create("largeInvader1.png");
+	this->addChild(sprite);
+
 	// crear un layout principal para los controles UI
 	ui::Layout* layout = ui::Layout::create();
 	layout->setContentSize(screenSize);

@@ -1,4 +1,3 @@
-
 #ifndef __CORDOVA_PLUGIN_DEVICE_TEST_H__
 #define __CORDOVA_PLUGIN_DEVICE_TEST_H__
 

@@ -1,8 +1,8 @@
 #include "cordova_plugin_device_test.h"
 
-#if defined CC_PLATFORM_WINRT
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_WINRT)
 #include "ZxPlugins-lib\scr\PluginFactory.h"
-#include "../../Plugins/cordova-plugin-device/proxy/Device.h"
+#include "Plugins/cordova-plugin-device/proxy/Device.h"
 #endif
 
 using namespace cocos2d;
@@ -46,7 +46,7 @@ bool cordova_plugin_device_test::init()
 bool cordova_plugin_device_test::execute()
 {
 
-#if defined CC_PLATFORM_WINRT
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_WINRT)
 
 	// test plugin
 	 cocos2d::zxplugin::cordova_plugin_device::Device* devicePlugin = cocos2d::zxplugin::PluginFactory::getInstance()->loadPlugin<cocos2d::zxplugin::cordova_plugin_device::Device>("cordova-plugin-device");

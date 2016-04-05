@@ -1,6 +1,7 @@
 #ifndef __ZXPLUGIN_PLUGINFACTORY_H__
 #define __ZXPLUGIN_PLUGINFACTORY_H__
 
+#include "cocos2d.h"
 #include "IPlugin.h"
 
 #include <assert.h>
@@ -64,10 +65,11 @@ namespace cocos2d {
 				m_pluginsMap[_pluginName] = std::make_shared<TPlugin>();
 				plugin =(TPlugin*) m_pluginsMap[_pluginName].get();
 			}
-						
+					
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_WINRT)
 			// add platform command handler
 			CocosAppWinRT::ZxPlugin::CommandHandler::addPlatformCommandHandler(convertToPlatformString(static_cast<IPlugin*>(plugin)->getPluginProperties()->Name), ref new CocosAppWinRT::ZxPlugin::cordova_plugin_device::PlatformCommandHandler());
-
+#endif
 			// return loaded plugin
 			return plugin;
 		}
