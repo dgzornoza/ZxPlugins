@@ -12,7 +12,7 @@ La razon para implementar como herencia privada es ocultar algunas interfaces in
 class  AppDelegate : private cocos2d::Application
 {
 public:
-
+	
 	/** Constructor por defecto de la clase */
     AppDelegate();
 	/** Destructor por defecto de la clase */

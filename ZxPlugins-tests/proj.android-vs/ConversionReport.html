@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+ <html xmlns:msxsl="urn:schemas-microsoft-com:xslt"><head><meta content="en-us" http-equiv="Content-Language" /><meta content="text/html; charset=utf-16" http-equiv="Content-Type" /><title _locID="ConversionReport0">
+          Conversion Report
+        </title><style> 
+                    /* Body style, for the entire document */
+                    body
+                    {
+                        background: #F3F3F4;
+                        color: #1E1E1F;
+                        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+                        padding: 0;
+                        margin: 0;
+                    }
+
+                    /* Header1 style, used for the main title */
+                    h1
+                    {
+                        padding: 10px 0px 10px 10px;
+                        font-size: 21pt;
+                        background-color: #E2E2E2;
+                        border-bottom: 1px #C1C1C2 solid; 
+                        color: #201F20;
+                        margin: 0;
+                        font-weight: normal;
+                    }
+
+                    /* Header2 style, used for "Overview" and other sections */
+                    h2
+                    {
+                        font-size: 18pt;
+                        font-weight: normal;
+                        padding: 15px 0 5px 0;
+                        margin: 0;
+                    }
+
+                    /* Header3 style, used for sub-sections, such as project name */
+                    h3
+                    {
+                        font-weight: normal;
+                        font-size: 15pt;
+                        margin: 0;
+                        padding: 15px 0 5px 0;
+                        background-color: transparent;
+                    }
+
+                    /* Color all hyperlinks one color */
+                    a
+                    {
+                        color: #1382CE;
+                    }
+
+                    /* Table styles */ 
+                    table
+                    {
+                        border-spacing: 0 0;
+                        border-collapse: collapse;
+                        font-size: 10pt;
+                    }
+
+                    table th
+                    {
+                        background: #E7E7E8;
+                        text-align: left;
+                        text-decoration: none;
+                        font-weight: normal;
+                        padding: 3px 6px 3px 6px;
+                    }
+
+                    table td
+                    {
+                        vertical-align: top;
+                        padding: 3px 6px 5px 5px;
+                        margin: 0px;
+                        border: 1px solid #E7E7E8;
+                        background: #F7F7F8;
+                    }
+
+                    /* Local link is a style for hyperlinks that link to file:/// content, there are lots so color them as 'normal' text until the user mouse overs */
+                    .localLink
+                    {
+                        color: #1E1E1F;
+                        background: #EEEEED;
+                        text-decoration: none;
+                    }
+
+                    .localLink:hover
+                    {
+                        color: #1382CE;
+                        background: #FFFF99;
+                        text-decoration: none;
+                    }
+
+                    /* Center text, used in the over views cells that contain message level counts */ 
+                    .textCentered
+                    {
+                        text-align: center;
+                    }
+
+                    /* The message cells in message tables should take up all avaliable space */
+                    .messageCell
+                    {
+                        width: 100%;
+                    }
+
+                    /* Padding around the content after the h1 */ 
+                    #content 
+                    {
+                      padding: 0px 12px 12px 12px; 
+                    }
+
+                    /* The overview table expands to width, with a max width of 97% */ 
+                    #overview table
+                    {
+                        width: auto;
+                        max-width: 75%; 
+                    }
+
+                    /* The messages tables are always 97% width */
+                    #messages table
+                    {
+                        width: 97%;
+                    }
+
+                    /* All Icons */
+                    .IconSuccessEncoded, .IconInfoEncoded, .IconWarningEncoded, .IconErrorEncoded
+                    {
+                        min-width:18px;
+                        min-height:18px; 
+                        background-repeat:no-repeat;
+                        background-position:center;
+                    }
+
+                    /* Success icon encoded */
+                    .IconSuccessEncoded
+                    {
+                        /* Note: Do not delete the comment below. It is used to verify the correctness of the encoded image resource below before the product is released */
+                        /* [---XsltValidateInternal-Base64EncodedImage:IconSuccess#Begin#background-image: url(data:image/png;base64,#Separator#);#End#] */
+                        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAABcElEQVR4Xq2TsUsCURzHv15g8ZJcBWlyiYYgCIWcb9DFRRwMW5TA2c0/QEFwFkxxUQdxVlBwCYWOi6IhWgQhBLHJUCkhLr/BW8S7gvrAg+N+v8/v+x68Z8MGy+XSCyABQAXgBgHGALoASkIIDWSLeLBetdHryMjd5IxQPWT4rn1c/P7+xxp72Cs9m5SZ0Bq2vPnbPFafK2zDvmNHypdC0BPkLlQhxJsCAhQoZwdZU5mwxh720qGo8MzTxTTKZDPCx2HoVzp6lz0Q9tKhyx0kGs8Ny+TkWRKk8lCROwEduhyg9l/6lunOPSfmH3NUH6uQ0KHLAe7JYvJjevm+DAMGJHToKtigE+vwvIidxLamb8IBY9e+C5LiXREkfho3TSd06HJA13/oh6T51MTsfQbHrsMynQ5dDihFjiK8JJAU9AKIWTp76dCVN7HWHrajmUEGvyF9nkbAE6gLIS7kTUyuf2gscLoJrElZo/Mvj+nPz/kLTmfnEwP3tB0AAAAASUVORK5CYII=);
+                    }
+
+                    /* Information icon encoded */
+                    .IconInfoEncoded
+                    {
+                        /* Note: Do not delete the comment below. It is used to verify the correctness of the encoded image resource below before the product is released */
+                        /* [---XsltValidateInternal-Base64EncodedImage:IconInformation#Begin#background-image: url(data:image/png;base64,#Separator#);#End#] */
+                        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABHElEQVR4Xs2TsUoDQRRF7wwoziokjZUKadInhdhukR9YP8DMX1hYW+QvdsXa/QHBbcXC7W0CamWTQnclFutceIQJwwaWNLlwm5k5d94M76mmaeCrrmsLYOocY12FcxZFUeozCqKqqgYA8uevv1H6VuPxcwlfk5N92KHBxfFeCSAxxswlYAW/Xr989x/mv9gkhtyMDhcAxgzRsp7flj8B/HF1RsMXq+NZMkopaHe7lbKxQUEIGbKsYNoGn969060hZBkQex/W8oRQwsQaW2o3Ago2SVcJUzAgY3N0lTCZZm+zPS8HB51gMmS1DEYyOz9acKO1D8JWTlafKIMxdhvlfdyT94Vv5h7P8Ky7nQzACmhvKq3zk3PjW9asz9D/1oigecsioooAAAAASUVORK5CYII=);
+                    }
+
+                    /* Warning icon encoded */
+                    .IconWarningEncoded
+                    {
+                        /* Note: Do not delete the comment below. It is used to verify the correctness of the encoded image resource below before the product is released */
+                        /* [---XsltValidateInternal-Base64EncodedImage:IconWarning#Begin#background-image: url(data:image/png;base64,#Separator#);#End#] */
+                        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAx0lEQVR4XpWSMQ7CMAxFf4xAyBMLCxMrO8dhaBcuwdCJS3RJBw7SA/QGTCxdWJgiQYWKXJWKIXHIlyw5lqr34tQgEOdcBsCOx5yZK3hCCKdYXneQkh4pEfqzLfu+wVDSyyzFoJjfz9NB+pAF+eizx2Vruts0k15mPgvS6GYvpVtQhB61IB/dk6AF6fS4Ben0uIX5odtFe8Q/eW1KvFeH4e8khT6+gm5B+t3juyDt7n0jpe+CANTd+oTUjN/U3yVaABnSUjFz/gFq44JaVSCXeQAAAABJRU5ErkJggg==);
+                    }
+
+                    /* Error icon encoded */
+                    .IconErrorEncoded
+                    {
+                        /* Note: Do not delete the comment below. It is used to verify the correctness of the encoded image resource below before the product is released */
+                        /* [---XsltValidateInternal-Base64EncodedImage:IconError#Begin#background-image: url(data:image/png;base64,#Separator#);#End#] */
+                        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABQElEQVR4XqWTvUoEQRCE6wYPZUA80AfwAQz23uCMjA7MDRQEIzPBVEyNTQUFIw00vcQTTMzuAh/AxEQQT8HF/3G/oGGnEUGuoNnd6qoZuqltyKEsyzVJq5I6rnUp6SjGeGhESikzzlc1eL7opfuVbrqbU1Zw9NCgtQMaZpY0eNnaaL2fHusvTK5vKu7sjSS1Y4y3QUA6K3e3Mau5UFDyMP7tYF9o8cAHZv68vipoIJg971PZIZ5HiwdvYGGvFVFHmGmZ2MxwmQYPXubPl9Up0tfoMQGetXd6mRbvhBw+boZ6WF7Mbv1+GsHRk0fQmPAH1GfmZirbCfDJ61tw3Px8/8pZsPAG4jlVhcPgZ7adwNWBB68lkRQWFiTgFlbnLY3DGGM7izIJIyT/jjIvEJw6fdJTc6krDzh6aMwMP9bvDH4ADSsa9uSWVJkAAAAASUVORK5CYII=);
+                    }
+                 </style><script type="text/javascript" language="javascript"> 
+          
+            // Startup 
+            // Hook up the the loaded event for the document/window, to linkify the document content
+            var startupFunction = function() { linkifyElement("messages"); };
+            
+            if(window.attachEvent)
+            {
+              window.attachEvent('onload', startupFunction);
+            }
+            else if (window.addEventListener) 
+            {
+              window.addEventListener('load', startupFunction, false);
+            }
+            else 
+            {
+              document.addEventListener('load', startupFunction, false);
+            } 
+            
+            // Toggles the visibility of table rows with the specified name 
+            function toggleTableRowsByName(name)
+            {
+               var allRows = document.getElementsByTagName('tr');
+               for (i=0; i < allRows.length; i++)
+               {
+                  var currentName = allRows[i].getAttribute('name');
+                  if(!!currentName && currentName.indexOf(name) == 0)
+                  {
+                      var isVisible = allRows[i].style.display == ''; 
+                      isVisible ? allRows[i].style.display = 'none' : allRows[i].style.display = '';
+                  }
+               }
+            }
+            
+            function scrollToFirstVisibleRow(name) 
+            {
+               var allRows = document.getElementsByTagName('tr');
+               for (i=0; i < allRows.length; i++)
+               {
+                  var currentName = allRows[i].getAttribute('name');
+                  var isVisible = allRows[i].style.display == ''; 
+                  if(!!currentName && currentName.indexOf(name) == 0 && isVisible)
+                  {
+                     allRows[i].scrollIntoView(true); 
+                     return true; 
+                  }
+               }
+               
+               return false;
+            }
+            
+            // Linkifies the specified text content, replaces candidate links with html links 
+            function linkify(text)
+            {
+                 if(!text || 0 === text.length)
+                 {
+                     return text; 
+                 }
+
+                 // Find http, https and ftp links and replace them with hyper links 
+                 var urlLink = /(http|https|ftp)\:\/\/[a-zA-Z0-9\-\.]+(:[a-zA-Z0-9]*)?\/?([a-zA-Z0-9\-\._\?\,\/\\\+&%\$#\=~;\{\}])*/gi;
+                 
+                 return text.replace(urlLink, '<a href="$&">$&</a>') ;
+            }
+            
+            // Linkifies the specified element by ID
+            function linkifyElement(id)
+            {
+                var element = document.getElementById(id);
+                if(!!element)
+                {
+                  element.innerHTML = linkify(element.innerHTML); 
+                }
+            }
+            
+            function ToggleMessageVisibility(projectName)
+            {
+              if(!projectName || 0 === projectName.length)
+              {
+                return; 
+              }
+              
+              toggleTableRowsByName("MessageRowClass" + projectName);
+              toggleTableRowsByName('MessageRowHeaderShow' + projectName);
+              toggleTableRowsByName('MessageRowHeaderHide' + projectName); 
+            }
+            
+            function ScrollToFirstVisibleMessage(projectName)
+            {
+              if(!projectName || 0 === projectName.length)
+              {
+                return; 
+              }
+              
+              // First try the 'Show messages' row
+              if(!scrollToFirstVisibleRow('MessageRowHeaderShow' + projectName))
+              {
+                // Failed to find a visible row for 'Show messages', try an actual message row 
+                scrollToFirstVisibleRow('MessageRowClass' + projectName); 
+              }
+            }
+           </script>
+         </head>
+
+         <body>
+          <h1 _locID="ConversionReport">
+          Conversion Report - EclipseImport</h1>
+
+          <div id="content">
+            <div id="overview">
+              <h2>Welcome to Visual Studio!</h2>
+              <div>Your Android application has now been imported into Visual Studio.  This report will give you information about your project, Android development in Visual Studio, and fixes to common problems.</div>
+            </div>
+
+            <div id="overview">
+
+              <h2>Project Overview</h2>
+              
+              <div>Your project will be using Visual Studio's SDK and NDK.</div>
+              
+              <table>
+                  <tr>
+                    <th></th>
+                    <th _locID="ProjectTableHeader">Project</th>
+                    <th _locID="ErrorsTableHeader">Errors</th>
+                    <th _locID="WarningsTableHeader">Warnings</th>
+                    <th _locID="MessagesTableHeader">Messages</th>
+                  </tr>
+
+                  
+                  <tr>
+                    <td class=IconInfoEncoded />
+                    <td><strong><a href = "#proj.androidPackaging" >proj.androidPackaging</a></strong></td>
+                    <td class="textCentered"><a >0</a></td>
+                    <td class="textCentered"><a >0</a></td>
+                    <td class="textCentered"><a href="#" onclick="ScrollToFirstVisibleMessage('proj.androidPackaging'); return false;">16</a></td>
+                  </tr>
+                  <tr>
+                    <td class=IconInfoEncoded />
+                    <td><strong><a href = "#proj.androidNative" >proj.androidNative</a></strong></td>
+                    <td class="textCentered"><a >0</a></td>
+                    <td class="textCentered"><a >0</a></td>
+                    <td class="textCentered"><a href="#" onclick="ScrollToFirstVisibleMessage('proj.androidNative'); return false;">3</a></td>
+                  </tr>
+
+              </table>
+
+            <div id="messages"><a name="proj.androidPackaging" />
+                <h3>proj.androidPackaging</h3>
+                <table>
+                  <tr id="proj.androidPackagingHeaderRow" >
+                    <th></th>
+                    <th class="messageCell" _locID="MessageTableHeader">Message</th>
+                  </tr>
+
+                  
+
+                  
+
+                  
+                  <tr name="MessageRowClassproj.androidPackaging" style="display: none">
+                    <td class="IconInfoEncoded"><a name="proj.androidPackagingMessage" /></td>
+                    <td class="messageCell"><strong>proj.androidPackaging: </strong><span>D:\Projects\Libraries\ZxPlugins\ZxPlugins-tests\proj.android-vs\proj.android\.classpath added to project.</span></td>
+                  </tr>
+                  <tr name="MessageRowClassproj.androidPackaging" style="display: none">
+                    <td class="IconInfoEncoded"><a name="proj.androidPackagingMessage" /></td>
+                    <td class="messageCell"><strong>proj.androidPackaging: </strong><span>D:\Projects\Libraries\ZxPlugins\ZxPlugins-tests\proj.android-vs\proj.android\.cproject added to project.</span></td>
+                  </tr>
+                  <tr name="MessageRowClassproj.androidPackaging" style="display: none">
+                    <td class="IconInfoEncoded"><a name="proj.androidPackagingMessage" /></td>
+                    <td class="messageCell"><strong>proj.androidPackaging: </strong><span>D:\Projects\Libraries\ZxPlugins\ZxPlugins-tests\proj.android-vs\proj.android\.externalToolBuilders\org.eclipse.cdt.managedbuilder.core.genmakebuilder.launch added to project.</span></td>
+                  </tr>
+                  <tr name="MessageRowClassproj.androidPackaging" style="display: none">
+                    <td class="IconInfoEncoded"><a name="proj.androidPackagingMessage" /></td>
+                    <td class="messageCell"><strong>proj.androidPackaging: </strong><span>D:\Projects\Libraries\ZxPlugins\ZxPlugins-tests\proj.android-vs\proj.android\.project added to project.</span></td>
+                  </tr>
+                  <tr name="MessageRowClassproj.androidPackaging" style="display: none">
+                    <td class="IconInfoEncoded"><a name="proj.androidPackagingMessage" /></td>
+                    <td class="messageCell"><strong>proj.androidPackaging: </strong><span>D:\Projects\Libraries\ZxPlugins\ZxPlugins-tests\proj.android-vs\proj.android\.settings\org.eclipse.cdt.codan.core.prefs added to project.</span></td>
+                  </tr>
+                  <tr name="MessageRowClassproj.androidPackaging" style="display: none">
+                    <td class="IconInfoEncoded"><a name="proj.androidPackagingMessage" /></td>
+                    <td class="messageCell"><strong>proj.androidPackaging: </strong><span>D:\Projects\Libraries\ZxPlugins\ZxPlugins-tests\proj.android-vs\proj.android\.settings\org.eclipse.cdt.core.prefs added to project.</span></td>
+                  </tr>
+                  <tr name="MessageRowClassproj.androidPackaging" style="display: none">
+                    <td class="IconInfoEncoded"><a name="proj.androidPackagingMessage" /></td>
+                    <td class="messageCell"><strong>proj.androidPackaging: </strong><span>D:\Projects\Libraries\ZxPlugins\ZxPlugins-tests\proj.android-vs\proj.android\.settings\org.eclipse.ltk.core.refactoring.prefs added to project.</span></td>
+                  </tr>
+                  <tr name="MessageRowClassproj.androidPackaging" style="display: none">
+                    <td class="IconInfoEncoded"><a name="proj.androidPackagingMessage" /></td>
+                    <td class="messageCell"><strong>proj.androidPackaging: </strong><span>D:\Projects\Libraries\ZxPlugins\ZxPlugins-tests\proj.android-vs\proj.android\ant.properties added to project.</span></td>
+                  </tr>
+                  <tr name="MessageRowClassproj.androidPackaging" style="display: none">
+                    <td class="IconInfoEncoded"><a name="proj.androidPackagingMessage" /></td>
+                    <td class="messageCell"><strong>proj.androidPackaging: </strong><span>D:\Projects\Libraries\ZxPlugins\ZxPlugins-tests\proj.android-vs\proj.android\build-cfg.json added to project.</span></td>
+                  </tr>
+                  <tr name="MessageRowClassproj.androidPackaging" style="display: none">
+                    <td class="IconInfoEncoded"><a name="proj.androidPackagingMessage" /></td>
+                    <td class="messageCell"><strong>proj.androidPackaging: </strong><span>D:\Projects\Libraries\ZxPlugins\ZxPlugins-tests\proj.android-vs\proj.android\build_native.py added to project.</span></td>
+                  </tr>
+                  <tr name="MessageRowClassproj.androidPackaging" style="display: none">
+                    <td class="IconInfoEncoded"><a name="proj.androidPackagingMessage" /></td>
+                    <td class="messageCell"><strong>proj.androidPackaging: </strong><span>D:\Projects\Libraries\ZxPlugins\ZxPlugins-tests\proj.android-vs\proj.android\proguard-project.txt added to project.</span></td>
+                  </tr>
+                  <tr name="MessageRowClassproj.androidPackaging" style="display: none">
+                    <td class="IconInfoEncoded"><a name="proj.androidPackagingMessage" /></td>
+                    <td class="messageCell"><strong>proj.androidPackaging: </strong><span>D:\Projects\Libraries\ZxPlugins\ZxPlugins-tests\proj.android-vs\proj.android\res\drawable-hdpi\icon.png added to project.</span></td>
+                  </tr>
+                  <tr name="MessageRowClassproj.androidPackaging" style="display: none">
+                    <td class="IconInfoEncoded"><a name="proj.androidPackagingMessage" /></td>
+                    <td class="messageCell"><strong>proj.androidPackaging: </strong><span>D:\Projects\Libraries\ZxPlugins\ZxPlugins-tests\proj.android-vs\proj.android\res\drawable-ldpi\icon.png added to project.</span></td>
+                  </tr>
+                  <tr name="MessageRowClassproj.androidPackaging" style="display: none">
+                    <td class="IconInfoEncoded"><a name="proj.androidPackagingMessage" /></td>
+                    <td class="messageCell"><strong>proj.androidPackaging: </strong><span>D:\Projects\Libraries\ZxPlugins\ZxPlugins-tests\proj.android-vs\proj.android\res\drawable-mdpi\icon.png added to project.</span></td>
+                  </tr>
+                  <tr name="MessageRowClassproj.androidPackaging" style="display: none">
+                    <td class="IconInfoEncoded"><a name="proj.androidPackagingMessage" /></td>
+                    <td class="messageCell"><strong>proj.androidPackaging: </strong><span>D:\Projects\Libraries\ZxPlugins\ZxPlugins-tests\proj.android-vs\proj.android\res\values\strings.xml added to project.</span></td>
+                  </tr>
+                  <tr name="MessageRowClassproj.androidPackaging" style="display: none">
+                    <td class="IconInfoEncoded"><a name="proj.androidPackagingMessage" /></td>
+                    <td class="messageCell"><strong>proj.androidPackaging: </strong><span>D:\Projects\Libraries\ZxPlugins\ZxPlugins-tests\proj.android-vs\proj.android\src\org\cocos2dx\cpp\AppActivity.java added to project.</span></td>
+                  </tr>
+                  <tr name="MessageRowClassproj.androidPackaging" style="display: none">
+                    <td class="IconInfoEncoded"><a name="proj.androidPackagingMessage" /></td>
+                    <td class="messageCell"><strong>proj.androidPackaging: </strong><span>packaging AndroidManifest.xml added to project.</span></td>
+                  </tr>
+                  <tr name="MessageRowClassproj.androidPackaging" style="display: none">
+                    <td class="IconInfoEncoded"><a name="proj.androidPackagingMessage" /></td>
+                    <td class="messageCell"><strong>proj.androidPackaging: </strong><span>packaging project.properties added to project.</span></td>
+                  </tr>
+                  <tr name="MessageRowClassproj.androidPackaging" style="display: none">
+                    <td class="IconInfoEncoded"><a name="proj.androidPackagingMessage" /></td>
+                    <td class="messageCell"><strong>proj.androidPackaging: </strong><span>packaging build.xml added to project.</span></td>
+                  </tr>
+                  <tr name="MessageRowHeaderShowproj.androidPackaging">
+                    <td class="IconInfoEncoded" />
+                    <td class="messageCell"><a _locID="ShowAdditionalMessages" href="#" name="proj.androidPackagingMessage" onclick="ToggleMessageVisibility('proj.androidPackaging'); return false;">Show 16 messages</a>
+                    </td>
+                  </tr>
+
+                  <tr style="display: none" name="MessageRowHeaderHideproj.androidPackaging">
+                    <td class="IconInfoEncoded" />
+                    <td class="messageCell"><a _locID="HideAdditionalMessages" href="#" name="proj.androidPackagingMessage" onclick="ToggleMessageVisibility('proj.androidPackaging'); return false;">Hide messages</a>
+                    </td>
+                  </tr>
+            </table>
+              </a>
+              </div><div id="messages"><a name="proj.androidNative" />
+                <h3>proj.androidNative</h3>
+                <table>
+                  <tr id="proj.androidNativeHeaderRow" >
+                    <th></th>
+                    <th class="messageCell" _locID="MessageTableHeader">Message</th>
+                  </tr>
+
+                  
+
+                  
+
+                  
+                  <tr name="MessageRowClassproj.androidNative" style="display: none">
+                    <td class="IconInfoEncoded"><a name="proj.androidNativeMessage" /></td>
+                    <td class="messageCell"><strong>proj.androidNative: </strong><span>D:\Projects\Libraries\ZxPlugins\ZxPlugins-tests\proj.android-vs\proj.android\jni\Android.mk added to project.</span></td>
+                  </tr>
+                  <tr name="MessageRowClassproj.androidNative" style="display: none">
+                    <td class="IconInfoEncoded"><a name="proj.androidNativeMessage" /></td>
+                    <td class="messageCell"><strong>proj.androidNative: </strong><span>D:\Projects\Libraries\ZxPlugins\ZxPlugins-tests\proj.android-vs\proj.android\jni\Application.mk added to project.</span></td>
+                  </tr>
+                  <tr name="MessageRowClassproj.androidNative" style="display: none">
+                    <td class="IconInfoEncoded"><a name="proj.androidNativeMessage" /></td>
+                    <td class="messageCell"><strong>proj.androidNative: </strong><span>D:\Projects\Libraries\ZxPlugins\ZxPlugins-tests\proj.android-vs\proj.android\jni\hellocpp\main.cpp added to project.</span></td>
+                  </tr>
+                  <tr name="MessageRowHeaderShowproj.androidNative">
+                    <td class="IconInfoEncoded" />
+                    <td class="messageCell"><a _locID="ShowAdditionalMessages" href="#" name="proj.androidNativeMessage" onclick="ToggleMessageVisibility('proj.androidNative'); return false;">Show 3 messages</a>
+                    </td>
+                  </tr>
+
+                  <tr style="display: none" name="MessageRowHeaderHideproj.androidNative">
+                    <td class="IconInfoEncoded" />
+                    <td class="messageCell"><a _locID="HideAdditionalMessages" href="#" name="proj.androidNativeMessage" onclick="ToggleMessageVisibility('proj.androidNative'); return false;">Hide messages</a>
+                    </td>
+                  </tr>
+            </table>
+              </a>
+              </div>  
+
+            <div id="overview">
+              <h2>General Information</h2>
+
+              <h3> VS Android Development</h3>
+               <table>
+                  <tr id="VSHeaderRow">
+                    <th></th>
+                    <th class="messageCell" _locID="MessageTableHeader">Message</th>
+                  </tr>
+                  <tr name="MessageRowClass">
+                    <td></td>
+                    <td class="messageCell"><span>Editing your Android project in Visual Studio will use Visual Studio's SDK and NDK.</span></td>
+                  </tr>
+
+                  <tr name="MessageRowClass">
+                    <td></td>
+                    <td class="messageCell"><span>Visual Studio 2015's build system currently supports only 32-bit x86 and ARM.</span></td>
+                  </tr>
+
+                  <tr name="MessageRowClass">
+                    <td></td>
+                    <td class="messageCell"><span>Ensure includes and preprocessor definitions have been converted correctly by checking them in your C++ project's NMake property page under IntelliSense | Include Search Path and IntelliSense | Preprocessor Definitions.</span></td>
+                  </tr>
+
+                  <tr name="MessageRowClass">
+                    <td></td>
+                    <td class="messageCell"><span>The packaging project build system does not support projects with more than one file with a .properties extension.</span></td>
+                  </tr>
+                </table>
+
+              <h3>Troubleshooting</h3>
+
+              <table>
+                  <tr id="VSHeaderRow">
+                    <th></th>
+                    <th class="messageCell" _locID="MessageTableHeader">Message</th>
+                  </tr>
+                  <tr name="MessageRowClass">
+                    <td></td>
+                    <td class="messageCell"><span>If you are working in a pre-existing directory, clean all build output folders before trying to build with Visual Studio.</span></td>
+                  </tr>
+
+                  <tr name="MessageRowClass">
+                    <td></td>
+                    <td class="messageCell"><span>NDK Debugging is enabled by default for the Debug configuration only and necessary for deployment and C++ debugging. To disable it, remove NDK_DEBUG=1 from "Build Command Line" in your C++ project's NMake property page or switch to the Release configuration.</span></td>
+                  </tr>
+
+                  <tr name="MessageRowClass">
+                    <td></td>
+                    <td class="messageCell"><span>If you experience Ant not being able to start the JVM due to lack of heap space on packaging project build, close all other open programs and try again or
+                    increase the Java heap size using the -Xmx option.</span></td>
+                  </tr>
+
+                  <tr name="MessageRowClass">
+                    <td></td>
+                    <td class="messageCell"><span>Ensure relative file paths in the converted project and any configuration or .properties files are correct after conversion.</span></td>
+                  </tr>
+
+                  <tr name="MessageRowClass">
+                    <td></td>
+                    <td class="messageCell"><span>If your project.properties file references an external android library, make sure it is built already or contains a build.xml file.</span></td>
+                  </tr>
+
+                  <tr name="MessageRowClass">
+                    <td></td>
+                    <td class="messageCell"><span>By default, the .apk file generated by your Packaging Project will have the same name as the project. However, you cannot deploy an .apk with spaces in its filename
+                      to an Android device. If the package manager fails to install your app with an 'InvalidUri' code, remove the spaces from your .apk filename in the packaging project's General property page.</span></td>
+                  </tr>
+
+                  <tr name="MessageRowClass">
+                    <td></td>
+                    <td class="messageCell"><span>Make sure your C++ project is building libraries for the appropriate ABIs and platforms in the Application.mk file.</span></td>
+                  </tr>
+
+                </table>
+
+            </div>
+          
+          </div>
+
+         </body>
