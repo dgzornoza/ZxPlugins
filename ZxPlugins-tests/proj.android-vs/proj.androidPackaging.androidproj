@@ -75,6 +75,7 @@
   <ItemGroup>
     <AndroidManifest Include="AndroidManifest.xml" />
     <AntProjectPropertiesFile Include="ant.properties" />
+    <AntProjectPropertiesFile Include="local.properties" />
     <AntProjectPropertiesFile Include="project.properties" />
     <AntBuildXml Include="build.xml" />
   </ItemGroup>
