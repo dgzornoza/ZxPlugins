@@ -14,6 +14,8 @@ LOCAL_SRC_FILES := hellocpp/main.cpp \
                    ../../Classes/AppDelegate.cpp \
 				   ../../Classes/LayerBase.cpp \
 				   ../../Classes/MainMenuLayer.cpp \
+				   ../../Classes/cordova_plugin_device_test/cordova_plugin_device_test.cpp \
+				   ../../../ZxPlugins-lib/scr/PluginFactory.cpp \
 				   
 
 LOCAL_C_INCLUDES := $(LOCAL_PATH)/../../Classes \

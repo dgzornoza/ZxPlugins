@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
+    <AdditionalSymbolSearchPaths>$(ProjDir)../proj.android/obj\local\x86;$(AdditionalSymbolSearchPaths)</AdditionalSymbolSearchPaths>
+    <DebuggerFlavor>AndroidDebugger</DebuggerFlavor>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x86'">
+    <AdditionalSymbolSearchPaths>D:\Projects\Libraries\ZxPlugins\ZxPlugins-tests\proj.android\obj\local\x86;$(AdditionalSymbolSearchPaths)</AdditionalSymbolSearchPaths>
+    <DebuggerFlavor>AndroidDebugger</DebuggerFlavor>
+    <AndroidDeviceID>emulator-5558;Nexus</AndroidDeviceID>
+  </PropertyGroup>
+</Project>
