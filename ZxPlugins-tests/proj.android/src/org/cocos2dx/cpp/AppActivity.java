@@ -29,4 +29,12 @@ package org.cocos2dx.cpp;
 import org.cocos2dx.lib.Cocos2dxActivity;
 
 public class AppActivity extends Cocos2dxActivity {
+	
+	public native void doTest();  // to be supplied in C++ trhough JNI
+
+	public void showId() {  // replace the previous version of example 5
+			 
+		doTest();         // <==== invoke the native method
+	}
 }
+

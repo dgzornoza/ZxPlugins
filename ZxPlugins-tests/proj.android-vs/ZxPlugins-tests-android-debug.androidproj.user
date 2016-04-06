@@ -7,6 +7,6 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x86'">
     <AdditionalSymbolSearchPaths>D:\Projects\Libraries\ZxPlugins\ZxPlugins-tests\proj.android\obj\local\x86;$(AdditionalSymbolSearchPaths)</AdditionalSymbolSearchPaths>
     <DebuggerFlavor>AndroidDebugger</DebuggerFlavor>
-    <AndroidDeviceID>emulator-5558;Nexus</AndroidDeviceID>
+    <AndroidDeviceID>emulator-5554;Nexus_7</AndroidDeviceID>
   </PropertyGroup>
 </Project>
