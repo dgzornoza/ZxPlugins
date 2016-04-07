@@ -41,7 +41,7 @@ void PluginFactory::unloadPlugin(const char* _pluginName)
 	
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_WINRT)
 	// remove platform command handler
-	CocosAppWinRT::ZxPlugin::CommandHandler::removePlatformCommandHandler(convertToPlatformString(it->second->getPluginProperties()->Name));
+	CocosAppWinRT::ZxPlugin::PluginHandler::removePlugin(convertToPlatformString(it->second->getPluginProperties()->Name));
 #endif
 
 	// delete plugin and erase key / value from plugins map

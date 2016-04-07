@@ -68,7 +68,7 @@ namespace cocos2d {
 					
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_WINRT)
 			// add platform command handler
-			CocosAppWinRT::ZxPlugin::CommandHandler::addPlatformCommandHandler(convertToPlatformString(static_cast<IPlugin*>(plugin)->getPluginProperties()->Name), ref new CocosAppWinRT::ZxPlugin::cordova_plugin_device::PlatformCommandHandler());
+			CocosAppWinRT::ZxPlugin::PluginHandler::addPlugin(convertToPlatformString(static_cast<IPlugin*>(plugin)->getPluginProperties()->Name), ref new CocosAppWinRT::ZxPlugin::CommandHandler());
 #endif
 			// return loaded plugin
 			return plugin;

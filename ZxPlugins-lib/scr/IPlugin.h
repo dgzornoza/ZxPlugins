@@ -102,7 +102,7 @@ namespace cocos2d {
 
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_WINRT)
 				// invoke platform handler command code								
-				CocosAppWinRT::ZxPlugin::CommandHandler::execPlatformCommand(
+				CocosAppWinRT::ZxPlugin::PluginHandler::execCommand(
 					wrapPlatformCallback(_successCallback),
 					wrapPlatformCallback(_errorCallback),
 					convertToPlatformString(this->m_pluginPropertiesModel->Name),

@@ -1,7 +1,9 @@
 #include "cordova_plugin_device_test.h"
 
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
 #include "platform/android/jni/JniHelper.h"
 #include <jni.h>
+#endif
 
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_WINRT)
 #include "ZxPlugins-lib\scr\PluginFactory.h"
@@ -46,6 +48,8 @@ bool cordova_plugin_device_test::init()
 	return true;
 }
 
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
+
 void doTestCPP(JNIEnv* e, jobject o) 
 {
 	log("C++callback activated");
@@ -54,12 +58,17 @@ void doTestCPP(JNIEnv* e, jobject o)
 	else log("UID not found");
 }
 
+#endif
+
 bool cordova_plugin_device_test::execute()
 {
+
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
+
 	// http://www.codeproject.com/Articles/993067/Calling-Java-from-Cplusplus-with-JNI
 	// http://stnguyen.com/cocos2d-x/call-java-functions-from-cpp.html
 	// http://www.cocos2d-x.org/wiki/User_Tutorial-Call_Java_functions_in_Cocos2d-x
-//#if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
+
 	// invoke native code
 	//this->exec(_successCallback, _errorCallback, "Device", "getDeviceInfo", "[]");
 
@@ -119,7 +128,7 @@ bool cordova_plugin_device_test::execute()
 	//std::string str = JniHelper::jstring2string(s);
 	//methodInfo.env->DeleteLocalRef(methodInfo.classID);
 //#endif
-
+#endif
 
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_WINRT)
 
