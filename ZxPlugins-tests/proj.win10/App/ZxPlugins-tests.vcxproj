@@ -286,6 +286,9 @@
     <ProjectReference Include="..\..\..\Plugins\cordova-plugin-device\platform\win10\CocosAppWinRT.ZxPlugin.cordova_plugin_device\CocosAppWinRT.ZxPlugin.cordova_plugin_device.csproj">
       <Project>{2a88d3c4-5e5f-45df-9a65-bc177f5e1c0b}</Project>
     </ProjectReference>
+    <ProjectReference Include="..\..\..\ZxPlugins-lib\platform\win10\ZxPluginLibHandler\ZxPluginLibHandler.csproj">
+      <Project>{1fd671cc-d441-4aa3-a1e1-80bef127b464}</Project>
+    </ProjectReference>
     <ProjectReference Include="..\..\cocos2d\cocos\2d\libcocos2d_win10\libcocos2d.vcxproj">
       <Project>{07c2895d-720c-487d-b7b4-12c293ea533f}</Project>
     </ProjectReference>

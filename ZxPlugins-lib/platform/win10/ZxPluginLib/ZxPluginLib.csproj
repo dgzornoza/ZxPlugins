@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{2A88D3C4-5E5F-45DF-9A65-BC177F5E1C0B}</ProjectGuid>
-    <OutputType>winmdobj</OutputType>
+    <ProjectGuid>{B044061E-5529-4F50-8A3E-DE9D8871E9A1}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CocosAppWinRT.ZxPlugin.cordova_plugin_device</RootNamespace>
-    <AssemblyName>CocosAppWinRT.ZxPlugin.cordova_plugin_device</AssemblyName>
+    <RootNamespace>CocosAppWinRT.ZxPlugin</RootNamespace>
+    <AssemblyName>ZxPluginLib</AssemblyName>
     <DefaultLanguage>en-US</DefaultLanguage>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
     <TargetPlatformVersion>10.0.10240.0</TargetPlatformVersion>
@@ -46,8 +46,6 @@
     <PlatformTarget>x86</PlatformTarget>
     <UseVSHostingProcess>false</UseVSHostingProcess>
     <ErrorReport>prompt</ErrorReport>
-    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
-    <DocumentationFile>bin\x86\Debug\CocosAppWinRT.ZxPlugin.cordova_plugin_device.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
     <PlatformTarget>x86</PlatformTarget>
@@ -107,34 +105,17 @@
   <ItemGroup>
     <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
     <None Include="project.json" />
-    <PRIResource Include="Resources\es-ES\Resources.resw" />
-    <PRIResource Include="Resources\en-US\Resources.resw" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="PluginComponent.cs" />
-    <Compile Include="src\Device.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <SDKReference Include="WindowsMobile, Version=10.0.10240.0">
-      <Name>Windows Mobile Extensions for the UWP</Name>
-    </SDKReference>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\..\..\..\ZxPlugins-lib\platform\win10\ZxPluginLibHandler\ZxPluginLibHandler.csproj">
-      <Project>{1fd671cc-d441-4aa3-a1e1-80bef127b464}</Project>
-      <Name>ZxPluginLibHandler</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\..\..\ZxPlugins-lib\platform\win10\ZxPluginLib\ZxPluginLib.csproj">
-      <Project>{b044061e-5529-4f50-8a3e-de9d8871e9a1}</Project>
-      <Name>ZxPluginLib</Name>
-    </ProjectReference>
+    <Compile Include="src\BaseCommand.cs" />
+    <Compile Include="src\CommandFactory.cs" />
+    <Compile Include="src\CommandResult.cs" />
+    <Compile Include="src\JsonHelper.cs" />
+    <EmbeddedResource Include="Properties\ZxPluginLibHandler.rd.xml" />
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
-  </PropertyGroup>
-  <PropertyGroup>
-    <StartupObject />
   </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

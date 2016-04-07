@@ -7,7 +7,7 @@ namespace CocosAppWinRT.ZxPlugin
     /// <summary>
     /// Provides functionality to create plugin command by name.
     /// </summary>
-    static class CommandFactory
+    public static class CommandFactory
     {
         /// <summary>
         /// Namespace base for all commands

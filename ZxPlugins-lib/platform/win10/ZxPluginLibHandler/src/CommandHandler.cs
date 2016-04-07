@@ -3,6 +3,13 @@
 namespace CocosAppWinRT.ZxPlugin
 {
     /// <summary>
+    /// delegate to invoke from platform command handler on finish command
+    /// </summary>
+    /// <param name="_jsonResult"> json result formed by 'status, message' ej: "\"status\":{0},\"message\":{1}"</param>
+    public delegate void CommandCallback(string _jsonResult);
+
+
+    /// <summary>
     /// zxplugin interface for platform command handler.
     /// this interface declare methods for handle comunication between platform native code and cocos2dx.
     /// </summary>
@@ -17,7 +24,7 @@ namespace CocosAppWinRT.ZxPlugin
         /// <param name="_className">Class name in platform code with the function to execute</param>
         /// <param name="_funcName">Function name in the class to execute</param>
         /// <param name="_params">parameters to invoke the function, for complex objects can use json string.</param>
-        void exec(CompletedFunc _successCallback, CompletedFunc _errorCallback, string _className, string _funcName, string _params);
+        void exec(CommandCallback _successCallback, CommandCallback _errorCallback, string _className, string _funcName, string _params);
 
     };
 
@@ -34,12 +41,12 @@ namespace CocosAppWinRT.ZxPlugin
         /// <param name="_className">Class name in platform code with the function to execute</param>
         /// <param name="_funcName">Function name in the class to execute</param>
         /// <param name="_params">parameters to invoke the function, for complex objects can use json string.</param>
-        public void exec(CompletedFunc _successCallback, CompletedFunc _errorCallback, string _className, string _funcName, string _params)
+        public void exec(CommandCallback _successCallback, CommandCallback _errorCallback, string _className, string _funcName, string _params)
         {
             // verify params
             if (_successCallback == null || _errorCallback == null || string.IsNullOrWhiteSpace(_className) || string.IsNullOrWhiteSpace(_funcName) || string.IsNullOrWhiteSpace(_params))
             {
-                throw new ArgumentNullException("PlatformCommandHandler::exec()");
+                throw new ArgumentNullException("CommandHandler::exec()");
             }
 
             // create callbackID
@@ -61,7 +68,7 @@ namespace CocosAppWinRT.ZxPlugin
                     // verify callback id
                     if (_result.CallbackId == null || _result.CallbackId == callbackId)
                     {
-                        CompletedFunc resultHandler = _result.Result != CommandResult.Status.OK ? _errorCallback : _successCallback;
+                        CommandCallback resultHandler = _result.Result != CommandResult.Status.OK ? _errorCallback : _successCallback;
                         resultHandler.Invoke(_result.ToJSONString());
 
                         // remove current command result handler

@@ -5,7 +5,7 @@ namespace CocosAppWinRT.ZxPlugin
     /// <summary>
     /// Represents command execution result
     /// </summary>
-    class CommandResult : EventArgs
+    public class CommandResult : EventArgs
     {
         /// <summary>
         /// Predefined resultant messages

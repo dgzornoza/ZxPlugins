@@ -3,11 +3,6 @@ using System.Collections.Generic;
 
 namespace CocosAppWinRT.ZxPlugin
 {
-    /// <summary>
-    /// delegate to invoke from platform command handler on finish command
-    /// </summary>
-    /// <param name="_jsonResult"> json result formed by 'status, message' ej: "\"status\":{0},\"message\":{1}"</param>
-    public delegate void CompletedFunc(string _jsonResult);
 
     /// <summary>
     /// Plugin handler for interop with platform code
@@ -50,7 +45,7 @@ namespace CocosAppWinRT.ZxPlugin
         /// <param name="_funcName">Function name in the class to execute</param>
         /// <param name="_params">parameters to invoke the function, for complex objects can use json string.</param>
         /// <remarks>This function should be invoked for IPlugin code for execute plugin command</remarks>
-        public static void execCommand(CompletedFunc _successCallback, CompletedFunc _errorCallback, string _pluginName, string _className, string _funcName, string _params)
+        public static void execCommand(CommandCallback _successCallback, CommandCallback _errorCallback, string _pluginName, string _className, string _funcName, string _params)
         {
             // verify plugin handler
             if (!s_pluginHandlers.ContainsKey(_pluginName)) return;

@@ -9,7 +9,7 @@ namespace CocosAppWinRT.ZxPlugin
     /// Command base for create windows platform plugins
     /// </summary>
     /// <remarks>All platform plugins must extend BaseCommand</remarks>
-    abstract class BaseCommand : IDisposable
+    public class BaseCommand : IDisposable
     {
         /// <summary>
         /// Eventhandler for custom Command result
@@ -114,33 +114,33 @@ namespace CocosAppWinRT.ZxPlugin
         /// <summary>
         /// Method for dispatch command result with values
         /// </summary>
-        /// <param name="result">command result</param>
-        /// <param name="callbackId">Callback id for command</param>
-        public void DispatchCommandResult(CommandResult result,string callbackId="")
+        /// <param name="_result">command result</param>
+        /// <param name="_callbackId">Callback id for command</param>
+        public void DispatchCommandResult(CommandResult _result, string _callbackId="")
         {
-            if (!string.IsNullOrEmpty(callbackId)) 
+            if (!string.IsNullOrEmpty(_callbackId)) 
             {
-                result.CallbackId = callbackId;
+                _result.CallbackId = _callbackId;
             }
             else
             {
-                result.CallbackId = this.CurrentCommandCallbackId;
+                _result.CallbackId = this.CurrentCommandCallbackId;
             }
 
-            if (ResultHandlers.ContainsKey(result.CallbackId))
+            if (ResultHandlers.ContainsKey(_result.CallbackId))
             {
-                ResultHandlers[result.CallbackId](this, result);
+                ResultHandlers[_result.CallbackId](this, _result);
             }
             else if (this.OnCommandResult != null)
             {
-                OnCommandResult(this, result);
+                OnCommandResult(this, _result);
             }
             else
             {
-                Debug.WriteLine("Failed to locate callback for id : " + result.CallbackId);
+                Debug.WriteLine("Failed to locate callback for id : " + _result.CallbackId);
             }
 
-            if (!result.KeepCallback)
+            if (!_result.KeepCallback)
             {
                 this.Dispose();
             }

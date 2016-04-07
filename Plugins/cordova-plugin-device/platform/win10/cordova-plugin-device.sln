@@ -5,15 +5,13 @@ VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ZxPlugin", "ZxPlugin", "{45C05B20-7F69-42DC-A4AA-EBA7F4C40F92}"
 EndProject
-Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "ZxPluginLibHandler", "..\..\..\..\ZxPlugins-lib\platform\win10\ZxPluginLibHandler\ZxPluginLibHandler.shproj", "{312A6253-699A-4E99-931D-6BE320715E61}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CocosAppWinRT.ZxPlugin.cordova_plugin_device", "CocosAppWinRT.ZxPlugin.cordova_plugin_device\CocosAppWinRT.ZxPlugin.cordova_plugin_device.csproj", "{2A88D3C4-5E5F-45DF-9A65-BC177F5E1C0B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZxPluginLib", "..\..\..\..\ZxPlugins-lib\platform\win10\ZxPluginLib\ZxPluginLib.csproj", "{B044061E-5529-4F50-8A3E-DE9D8871E9A1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZxPluginLibHandler", "..\..\..\..\ZxPlugins-lib\platform\win10\ZxPluginLibHandler\ZxPluginLibHandler.csproj", "{1FD671CC-D441-4AA3-A1E1-80BEF127B464}"
+EndProject
 Global
-	GlobalSection(SharedMSBuildProjectFiles) = preSolution
-		..\..\..\..\ZxPlugins-lib\platform\win10\ZxPluginLibHandler\ZxPluginLibHandler.projitems*{2a88d3c4-5e5f-45df-9a65-bc177f5e1c0b}*SharedItemsImports = 4
-		..\..\..\..\ZxPlugins-lib\platform\win10\ZxPluginLibHandler\ZxPluginLibHandler.projitems*{312a6253-699a-4e99-931d-6be320715e61}*SharedItemsImports = 13
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Debug|ARM = Debug|ARM
@@ -41,11 +39,44 @@ Global
 		{2A88D3C4-5E5F-45DF-9A65-BC177F5E1C0B}.Release|x64.Build.0 = Release|x64
 		{2A88D3C4-5E5F-45DF-9A65-BC177F5E1C0B}.Release|x86.ActiveCfg = Release|x86
 		{2A88D3C4-5E5F-45DF-9A65-BC177F5E1C0B}.Release|x86.Build.0 = Release|x86
+		{B044061E-5529-4F50-8A3E-DE9D8871E9A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B044061E-5529-4F50-8A3E-DE9D8871E9A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B044061E-5529-4F50-8A3E-DE9D8871E9A1}.Debug|ARM.ActiveCfg = Debug|ARM
+		{B044061E-5529-4F50-8A3E-DE9D8871E9A1}.Debug|ARM.Build.0 = Debug|ARM
+		{B044061E-5529-4F50-8A3E-DE9D8871E9A1}.Debug|x64.ActiveCfg = Debug|x64
+		{B044061E-5529-4F50-8A3E-DE9D8871E9A1}.Debug|x64.Build.0 = Debug|x64
+		{B044061E-5529-4F50-8A3E-DE9D8871E9A1}.Debug|x86.ActiveCfg = Debug|x86
+		{B044061E-5529-4F50-8A3E-DE9D8871E9A1}.Debug|x86.Build.0 = Debug|x86
+		{B044061E-5529-4F50-8A3E-DE9D8871E9A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B044061E-5529-4F50-8A3E-DE9D8871E9A1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B044061E-5529-4F50-8A3E-DE9D8871E9A1}.Release|ARM.ActiveCfg = Release|ARM
+		{B044061E-5529-4F50-8A3E-DE9D8871E9A1}.Release|ARM.Build.0 = Release|ARM
+		{B044061E-5529-4F50-8A3E-DE9D8871E9A1}.Release|x64.ActiveCfg = Release|x64
+		{B044061E-5529-4F50-8A3E-DE9D8871E9A1}.Release|x64.Build.0 = Release|x64
+		{B044061E-5529-4F50-8A3E-DE9D8871E9A1}.Release|x86.ActiveCfg = Release|x86
+		{B044061E-5529-4F50-8A3E-DE9D8871E9A1}.Release|x86.Build.0 = Release|x86
+		{1FD671CC-D441-4AA3-A1E1-80BEF127B464}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1FD671CC-D441-4AA3-A1E1-80BEF127B464}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1FD671CC-D441-4AA3-A1E1-80BEF127B464}.Debug|ARM.ActiveCfg = Debug|ARM
+		{1FD671CC-D441-4AA3-A1E1-80BEF127B464}.Debug|ARM.Build.0 = Debug|ARM
+		{1FD671CC-D441-4AA3-A1E1-80BEF127B464}.Debug|x64.ActiveCfg = Debug|x64
+		{1FD671CC-D441-4AA3-A1E1-80BEF127B464}.Debug|x64.Build.0 = Debug|x64
+		{1FD671CC-D441-4AA3-A1E1-80BEF127B464}.Debug|x86.ActiveCfg = Debug|x86
+		{1FD671CC-D441-4AA3-A1E1-80BEF127B464}.Debug|x86.Build.0 = Debug|x86
+		{1FD671CC-D441-4AA3-A1E1-80BEF127B464}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1FD671CC-D441-4AA3-A1E1-80BEF127B464}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1FD671CC-D441-4AA3-A1E1-80BEF127B464}.Release|ARM.ActiveCfg = Release|ARM
+		{1FD671CC-D441-4AA3-A1E1-80BEF127B464}.Release|ARM.Build.0 = Release|ARM
+		{1FD671CC-D441-4AA3-A1E1-80BEF127B464}.Release|x64.ActiveCfg = Release|x64
+		{1FD671CC-D441-4AA3-A1E1-80BEF127B464}.Release|x64.Build.0 = Release|x64
+		{1FD671CC-D441-4AA3-A1E1-80BEF127B464}.Release|x86.ActiveCfg = Release|x86
+		{1FD671CC-D441-4AA3-A1E1-80BEF127B464}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{312A6253-699A-4E99-931D-6BE320715E61} = {45C05B20-7F69-42DC-A4AA-EBA7F4C40F92}
+		{B044061E-5529-4F50-8A3E-DE9D8871E9A1} = {45C05B20-7F69-42DC-A4AA-EBA7F4C40F92}
+		{1FD671CC-D441-4AA3-A1E1-80BEF127B464} = {45C05B20-7F69-42DC-A4AA-EBA7F4C40F92}
 	EndGlobalSection
 EndGlobal

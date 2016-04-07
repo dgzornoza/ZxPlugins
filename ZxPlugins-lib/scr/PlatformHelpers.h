@@ -43,9 +43,9 @@ namespace cocos2d {
 		* @param _callback c++ std::function for wrap into platform native pointer function
 		* @result platform native pointer function
 		*/
-		inline CocosAppWinRT::ZxPlugin::CompletedFunc^ wrapPlatformCallback(std::function<void(const std::string&)> _callback)
+		inline CocosAppWinRT::ZxPlugin::CommandCallback^ wrapPlatformCallback(std::function<void(const std::string&)> _callback)
 		{
-			return ref new CocosAppWinRT::ZxPlugin::CompletedFunc([=](Platform::String^ _param)
+			return ref new CocosAppWinRT::ZxPlugin::CommandCallback([=](Platform::String^ _param)
 			{
 				_callback(convertFromPlatformString(_param));
 			});
