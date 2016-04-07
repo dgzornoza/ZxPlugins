@@ -1,26 +1,11 @@
-﻿/*  
-	Licensed under the Apache License, Version 2.0 (the "License");
-	you may not use this file except in compliance with the License.
-	You may obtain a copy of the License at
-	
-	http://www.apache.org/licenses/LICENSE-2.0
-	
-	Unless required by applicable law or agreed to in writing, software
-	distributed under the License is distributed on an "AS IS" BASIS,
-	WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-	See the License for the specific language governing permissions and
-	limitations under the License.
-*/
+﻿using System;
 
-using System;
-using System.Text;
-
-namespace CocosAppWinRT.ZxPlugin.Cordova
+namespace CocosAppWinRT.ZxPlugin
 {
     /// <summary>
     /// Represents command execution result
     /// </summary>
-    class PluginResult : EventArgs
+    class CommandResult : EventArgs
     {
         /// <summary>
         /// Predefined resultant messages
@@ -76,8 +61,8 @@ namespace CocosAppWinRT.ZxPlugin.Cordova
         /// Creates new instance of the PluginResult class.
         /// </summary>
         /// <param name="status">Execution result</param>
-        public PluginResult(Status status)
-            : this(status, PluginResult.StatusMessages[(int)status])
+        public CommandResult(Status status)
+            : this(status, CommandResult.StatusMessages[(int)status])
         {
         }
 
@@ -86,12 +71,16 @@ namespace CocosAppWinRT.ZxPlugin.Cordova
         /// </summary>
         /// <param name="status">Execution result</param>
         /// <param name="message">The message</param>
-        public PluginResult(Status status, object message)
+        public CommandResult(Status status, object message)
         {
             this.Result = status;
             this.Message = JsonHelper.Serialize(message);
         }
 
+        /// <summary>
+        /// Convert command result to json string
+        /// </summary>
+        /// <returns>string in json with command result</returns>
         public string ToJSONString()
         {
             string res = String.Format("\"status\":{0},\"message\":{1},\"keepCallback\":{2}",
@@ -104,21 +93,10 @@ namespace CocosAppWinRT.ZxPlugin.Cordova
 
         }
 
-        [Obsolete]
-        public string ToCallbackString(string callbackId, string successCallback, string errorCallback)
-        {
-            if (this.IsSuccess)
-            {
-                StringBuilder buf = new StringBuilder("");
-                buf.Append(String.Format("{0}('{1}',{2});", successCallback, callbackId, this.ToJSONString()));
-                return buf.ToString();
-            }
-            else
-            {
-                return String.Format("{0}('{1}',{2});", errorCallback, callbackId, this.ToJSONString());
-            }
-        }
-
+        /// <summary>
+        /// Redefine object.ToString() for get command result in json
+        /// </summary>
+        /// <returns>string in json with command result</returns>
         public override String ToString()
         {
             return this.ToJSONString();

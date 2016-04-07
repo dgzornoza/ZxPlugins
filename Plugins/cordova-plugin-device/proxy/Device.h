@@ -70,7 +70,7 @@ namespace cocos2d { namespace zxplugin { namespace cordova_plugin_device {
 		void getInfo(std::function<void(const std::string&)> _successCallback, std::function<void(const std::string&)> _errorCallback)
 		{
 			// invoke native code
-			this->exec(_successCallback, _errorCallback, "Device", "getDeviceInfo", "[]");
+			this->exec(_successCallback, _errorCallback, "cordova_plugin_device.Device", "getDeviceInfo", "[]");
 																
 		};
 

@@ -2,8 +2,6 @@
 using Windows.ApplicationModel.Resources;
 using Windows.System.Profile;
 
-using CocosAppWinRT.ZxPlugin.Cordova;
-
 namespace CocosAppWinRT.ZxPlugin.cordova_plugin_device
 {
     /// <summary>
@@ -102,7 +100,7 @@ namespace CocosAppWinRT.ZxPlugin.cordova_plugin_device
                 $"\"isVirtual\":{isVirtual}";
 
             // dispatch cordova plugin result
-            DispatchCommandResult(new PluginResult(PluginResult.Status.OK, "{" + result + "}"));
+            DispatchCommandResult(new CommandResult(CommandResult.Status.OK, "{" + result + "}"));
 
 
         }

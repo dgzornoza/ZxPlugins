@@ -1,24 +1,9 @@
-﻿/*  
-	Licensed under the Apache License, Version 2.0 (the "License");
-	you may not use this file except in compliance with the License.
-	You may obtain a copy of the License at
-	
-	http://www.apache.org/licenses/LICENSE-2.0
-	
-	Unless required by applicable law or agreed to in writing, software
-	distributed under the License is distributed on an "AS IS" BASIS,
-	WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-	See the License for the specific language governing permissions and
-	limitations under the License.
-*/
-
-using System;
+﻿using System;
 using System.Reflection;
 using System.Diagnostics;
 using System.Collections.Generic;
-using Windows.UI.Xaml;
 
-namespace CocosAppWinRT.ZxPlugin.Cordova
+namespace CocosAppWinRT.ZxPlugin
 {
     abstract class BaseCommand : IDisposable
     {
@@ -27,19 +12,19 @@ namespace CocosAppWinRT.ZxPlugin.Cordova
          *  
          **/
 
-        public event EventHandler<PluginResult> OnCommandResult;
+        public event EventHandler<CommandResult> OnCommandResult;
 
         public string CurrentCommandCallbackId { get; set; }
 
         public BaseCommand()
         {
-            ResultHandlers = new Dictionary<string, EventHandler<PluginResult>>();
+            ResultHandlers = new Dictionary<string, EventHandler<CommandResult>>();
             //Window.Current.Activated += this.OnActivated;
         }
 
 
-        protected Dictionary<string, EventHandler<PluginResult>> ResultHandlers;
-        public void AddResultHandler(string callbackId, EventHandler<PluginResult> handler)
+        protected Dictionary<string, EventHandler<CommandResult>> ResultHandlers;
+        public void AddResultHandler(string callbackId, EventHandler<CommandResult> handler)
         {
             ResultHandlers.Add(callbackId, handler);
         }
@@ -78,7 +63,7 @@ namespace CocosAppWinRT.ZxPlugin.Cordova
                 {
                     object res = pInfo.GetValue(this, null);
 
-                    DispatchCommandResult(new PluginResult(PluginResult.Status.OK, res));
+                    DispatchCommandResult(new CommandResult(CommandResult.Status.OK, res));
 
                     return res;
                 }
@@ -90,10 +75,10 @@ namespace CocosAppWinRT.ZxPlugin.Cordova
 
         public void DispatchCommandResult()
         {
-            this.DispatchCommandResult(new PluginResult(PluginResult.Status.NO_RESULT));
+            this.DispatchCommandResult(new CommandResult(CommandResult.Status.NO_RESULT));
         }
 
-        public void DispatchCommandResult(PluginResult result,string callbackId="")
+        public void DispatchCommandResult(CommandResult result,string callbackId="")
         {
             if (!string.IsNullOrEmpty(callbackId)) 
             {

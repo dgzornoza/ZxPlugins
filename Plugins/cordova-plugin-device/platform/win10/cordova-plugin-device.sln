@@ -1,23 +1,17 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "External", "External", "{FD3B30F2-87D0-45CB-8102-0ED76D4812E7}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ZxPlugin", "ZxPlugin", "{45C05B20-7F69-42DC-A4AA-EBA7F4C40F92}"
-EndProject
-Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "CocosAppWinRT.ZxPlugin.Cordova", "..\..\..\..\External\CordovaLib\windows\CocosAppWinRT.ZxPlugin.Cordova.shproj", "{07264E75-3F9F-4D98-8709-C5982BE7DA31}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CocosAppWinRT.ZxPlugin.cordova_plugin_device", "CocosAppWinRT.ZxPlugin.cordova_plugin_device\CocosAppWinRT.ZxPlugin.cordova_plugin_device.csproj", "{2A88D3C4-5E5F-45DF-9A65-BC177F5E1C0B}"
 EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "ZxPluginLibHandler", "..\..\..\..\ZxPlugins-lib\platform\win10\ZxPluginLibHandler\ZxPluginLibHandler.shproj", "{312A6253-699A-4E99-931D-6BE320715E61}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CocosAppWinRT.ZxPlugin.cordova_plugin_device", "CocosAppWinRT.ZxPlugin.cordova_plugin_device\CocosAppWinRT.ZxPlugin.cordova_plugin_device.csproj", "{2A88D3C4-5E5F-45DF-9A65-BC177F5E1C0B}"
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
-		..\..\..\..\External\CordovaLib\windows\CocosAppWinRT.ZxPlugin.CordovaLib.projitems*{2a88d3c4-5e5f-45df-9a65-bc177f5e1c0b}*SharedItemsImports = 4
 		..\..\..\..\ZxPlugins-lib\platform\win10\ZxPluginLibHandler\ZxPluginLibHandler.projitems*{2a88d3c4-5e5f-45df-9a65-bc177f5e1c0b}*SharedItemsImports = 4
-		..\..\..\..\External\CordovaLib\windows\CocosAppWinRT.ZxPlugin.CordovaLib.projitems*{07264e75-3f9f-4d98-8709-c5982be7da31}*SharedItemsImports = 13
 		..\..\..\..\ZxPlugins-lib\platform\win10\ZxPluginLibHandler\ZxPluginLibHandler.projitems*{312a6253-699a-4e99-931d-6be320715e61}*SharedItemsImports = 13
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -52,7 +46,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{07264E75-3F9F-4D98-8709-C5982BE7DA31} = {FD3B30F2-87D0-45CB-8102-0ED76D4812E7}
 		{312A6253-699A-4E99-931D-6BE320715E61} = {45C05B20-7F69-42DC-A4AA-EBA7F4C40F92}
 	EndGlobalSection
 EndGlobal

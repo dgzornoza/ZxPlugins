@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "External", "External", "{B2F1FF1B-005C-490E-999E-17BD4B720B5C}"
 EndProject
@@ -23,7 +23,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CocosAppWinRT.ZxPlugin.cord
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
-		..\..\External\CordovaLib\windows\CocosAppWinRT.ZxPlugin.CordovaLib.projitems*{2a88d3c4-5e5f-45df-9a65-bc177f5e1c0b}*SharedItemsImports = 4
 		..\..\ZxPlugins-lib\platform\win10\ZxPluginLibHandler\ZxPluginLibHandler.projitems*{2a88d3c4-5e5f-45df-9a65-bc177f5e1c0b}*SharedItemsImports = 4
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

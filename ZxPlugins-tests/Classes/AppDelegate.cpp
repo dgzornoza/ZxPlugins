@@ -1,6 +1,7 @@
 #include "AppDelegate.h"
 #include "BasicScene.h"
 #include "MainMenuLayer.h"
+#include "cordova_plugin_device_test\cordova_plugin_device_test.h"
 
 using namespace cocos2d;
 
@@ -110,7 +111,7 @@ bool AppDelegate::applicationDidFinishLaunching()
 	// ----------------------------------------------------------
 	
     // Crear la escena principal y ejecutarla
-	Scene* scene = BasicScene<MainMenuLayer>::create();
+	Scene* scene = BasicScene<cordova_plugin_device_test>::create();
 
     director->runWithScene(scene);
 

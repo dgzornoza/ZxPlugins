@@ -9,6 +9,11 @@
     <Import_RootNamespace>CocosAppWinRT.ZxPlugin</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)src\BaseCommand.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)src\CommandFactory.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)src\PluginHandler.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)src\JsonHelper.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)src\CommandHandler.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)src\CommandResult.cs" />
   </ItemGroup>
 </Project>
