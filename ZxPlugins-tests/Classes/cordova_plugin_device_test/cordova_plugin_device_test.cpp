@@ -75,7 +75,7 @@ bool cordova_plugin_device_test::execute()
 	auto env = cocos2d::JniHelper::getEnv();
 
 	// try to find the class
-	jclass javaClass = env->FindClass("org/cocos2dx/zxplugin/CommandHandler");  
+	jclass javaClass = env->FindClass("com/dgzornoza/zxplugin/CommandHandler");  
 	if (javaClass == nullptr) 
 	{
 		log("ERROR: class not found !");
