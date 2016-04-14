@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{B044061E-5529-4F50-8A3E-DE9D8871E9A1}</ProjectGuid>
+    <ProjectGuid>{1FD671CC-D441-4AA3-A1E1-80BEF127B464}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>CocosAppWinRT.ZxPlugin</RootNamespace>

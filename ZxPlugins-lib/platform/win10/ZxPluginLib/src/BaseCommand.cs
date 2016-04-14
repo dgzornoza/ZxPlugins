@@ -9,7 +9,7 @@ namespace CocosAppWinRT.ZxPlugin
     /// Command base for create windows platform plugins
     /// </summary>
     /// <remarks>All platform plugins must extend BaseCommand</remarks>
-    public class BaseCommand : IDisposable
+    public class BaseCommand
     {
         /// <summary>
         /// Eventhandler for custom Command result
@@ -36,59 +36,59 @@ namespace CocosAppWinRT.ZxPlugin
         /// <summary>
         /// Method for add result handler
         /// </summary>
-        /// <param name="callbackId">Callback id</param>
-        /// <param name="handler">handler</param>
-        public void AddResultHandler(string callbackId, EventHandler<CommandResult> handler)
+        /// <param name="_callbackId">Callback id</param>
+        /// <param name="_handler">handler</param>
+        public void AddResultHandler(string _callbackId, EventHandler<CommandResult> _handler)
         {
-            ResultHandlers.Add(callbackId, handler);
+            ResultHandlers.Add(_callbackId, _handler);
         }
         /// <summary>
         /// Method for remove result handler
         /// </summary>
-        /// <param name="callbackId">Callback id</param>
+        /// <param name="_callbackId">Callback id</param>
         /// <returns>True if can remove.</returns>
-        public bool RemoveResultHandler(string callbackId)
+        public bool RemoveResultHandler(string _callbackId)
         {
-            return ResultHandlers.Remove(callbackId);
+            return ResultHandlers.Remove(_callbackId);
         }
 
         /// <summary>
         /// Method for invoke plugin command method.
         /// InvokeMethodNamed will call the named method of a BaseCommand subclass if it exists and pass the variable arguments list along.
         /// </summary>
-        /// <param name="callbackId">Callback id</param>
-        /// <param name="methodName">plugin method name to invoke</param>
-        /// <param name="args">method arguments</param>
+        /// <param name="_callbackId">Callback id</param>
+        /// <param name="_methodName">plugin method name to invoke</param>
+        /// <param name="_args">method arguments</param>
         /// <returns>Invoked oject result</returns>
-        public object InvokeMethodNamed(string callbackId, string methodName, params object[] args)
+        public object InvokeMethodNamed(string _callbackId, string _methodName, params object[] _args)
         {
             //Debug.WriteLine(string.Format("InvokeMethodNamed:{0} callbackId:{1}",methodName,callbackId));
-            this.CurrentCommandCallbackId = callbackId;
-            return InvokeMethodNamed(methodName, args);
+            this.CurrentCommandCallbackId = _callbackId;
+            return InvokeMethodNamed(_methodName, _args);
         }
 
         /// <summary>
         /// Method for invoke plugin command method.
         /// InvokeMethodNamed will call the named method of a BaseCommand subclass if it exists and pass the variable arguments list along.
         /// </summary>
-        /// <param name="methodName">plugin method name to invoke</param>
-        /// <param name="args">method arguments</param>
+        /// <param name="_methodName">plugin method name to invoke</param>
+        /// <param name="_args">method arguments</param>
         /// <returns>Invoked oject result</returns>
-        public object InvokeMethodNamed(string methodName, params object[] args)
+        public object InvokeMethodNamed(string _methodName, params object[] _args)
         {
-            MethodInfo mInfo = this.GetType().GetMethod(methodName);
+            MethodInfo mInfo = this.GetType().GetMethod(_methodName);
 
             if (mInfo != null)
             {
                 // every function handles DispatchCommandResult by itself
-                return mInfo.Invoke(this, args);
+                return mInfo.Invoke(this, _args);
             }
 
             // actually methodName could refer to a property
-            if (args == null || args.Length == 0 ||
-               (args.Length == 1 && "undefined".Equals(args[0])))
+            if (_args == null || _args.Length == 0 ||
+               (_args.Length == 1 && "undefined".Equals(_args[0])))
             {
-                PropertyInfo pInfo = this.GetType().GetProperty(methodName);
+                PropertyInfo pInfo = this.GetType().GetProperty(_methodName);
                 if (pInfo != null)
                 {
                     object res = pInfo.GetValue(this, null);
@@ -99,7 +99,7 @@ namespace CocosAppWinRT.ZxPlugin
                 }
             }
 
-            throw new MissingMethodException(methodName);
+            throw new MissingMethodException(_methodName);
 
         }
 
@@ -142,7 +142,7 @@ namespace CocosAppWinRT.ZxPlugin
 
             if (!_result.KeepCallback)
             {
-                this.Dispose();
+                this.OnCommandResult = null;
             }
 
         }
@@ -157,22 +157,6 @@ namespace CocosAppWinRT.ZxPlugin
         /// Occurs when the application is being loaded, and the config.xml has an autoload entry
         /// </summary>    
         public virtual void OnInit() {}
-
-
-        /// <summary>
-        /// Occurs when the application is being made active after previously being put
-        /// into a dormant state or tombstoned.
-        /// </summary>        
-        public virtual void OnActivated(object sender, Windows.UI.Core.WindowActivatedEventArgs e) { }
-
-        /// <summary>
-        /// Dispose command
-        /// </summary>
-        public void Dispose()
-        {
-            //Window.Current.Activated -= this.OnActivated;
-            this.OnCommandResult = null;
-        }
 
         /// <summary>
         /// Detach all command handlers

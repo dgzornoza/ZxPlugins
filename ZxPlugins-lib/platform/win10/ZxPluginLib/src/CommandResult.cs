@@ -5,7 +5,7 @@ namespace CocosAppWinRT.ZxPlugin
     /// <summary>
     /// Represents command execution result
     /// </summary>
-    public class CommandResult : EventArgs
+    public class CommandResult
     {
         /// <summary>
         /// Predefined resultant messages
@@ -60,21 +60,21 @@ namespace CocosAppWinRT.ZxPlugin
         /// <summary>
         /// Creates new instance of the PluginResult class.
         /// </summary>
-        /// <param name="status">Execution result</param>
-        public CommandResult(Status status)
-            : this(status, CommandResult.StatusMessages[(int)status])
+        /// <param name="_status">Execution result</param>
+        public CommandResult(Status _status)
+            : this(_status, CommandResult.StatusMessages[(int)_status])
         {
         }
 
         /// <summary>
         /// Creates new instance of the PluginResult class.
         /// </summary>
-        /// <param name="status">Execution result</param>
-        /// <param name="message">The message</param>
-        public CommandResult(Status status, object message)
+        /// <param name="_status">Execution result</param>
+        /// <param name="_message">The message</param>
+        public CommandResult(Status _status, object _message)
         {
-            this.Result = status;
-            this.Message = JsonHelper.Serialize(message);
+            this.Result = _status;
+            this.Message = JsonHelper.Serialize(_message);
         }
 
         /// <summary>
