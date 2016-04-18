@@ -1,143 +1,145 @@
 package com.dgzornoza.zxplugin;
 
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
-/// <summary>
-/// Command base for create windows platform plugins
-/// </summary>
-/// <remarks>All platform plugins must extend BaseCommand</remarks>
+/**
+ Command base for create windows platform plugins
+ @remarks All platform plugins must extend BaseCommand
+ */
 public class BaseCommand
 {
-    /// <summary>
-    /// Eventhandler for custom Command result
-    /// </summary>
-    public event EventHandler<CommandResult> OnCommandResult;
+    private String m_currentCommandCallbackId;
 
-    /// <summary>
-    /// Property for store current command callback id
-    /// </summary>
-    public string CurrentCommandCallbackId { get; set; }
+    /**
+    Dictionary for store result handlers for commands with callback id
+    */
+    protected Map<String, EventHandler<CommandResult>> ResultHandlers;
 
-    /// <summary>
-    /// default constructor
-    /// </summary>
+    /**
+     Eventhandler for custom Command result
+    */
+    public EventHandler<CommandResult> OnCommandResult;
+
+    public String getCurrentCommandCallbackId() { return this.m_currentCommandCallbackId; }
+    public void setCurrentCommandCallbackId(String _callbackId) { this.m_currentCommandCallbackId = _callbackId; }
+
+    /**
+     default constructor
+    */
     public BaseCommand()
     {
-        ResultHandlers = new Dictionary<string, EventHandler<CommandResult>>();
+        ResultHandlers = new HashMap<String, EventHandler<CommandResult>>();
     }
 
-    /// <summary>
-    /// Dictionary for store result handlers for commands with callback id
-    /// </summary>
-    protected Dictionary<string, EventHandler<CommandResult>> ResultHandlers;
-    /// <summary>
-    /// Method for add result handler
-    /// </summary>
-    /// <param name="_callbackId">Callback id</param>
-    /// <param name="_handler">handler</param>
-    public void AddResultHandler(string _callbackId, EventHandler<CommandResult> _handler)
+
+    /**
+    Method for add result handler
+    @param _callbackId Callback id
+    @param _handler handler
+     */
+    public void AddResultHandler(String _callbackId, EventHandler<CommandResult> _handler)
     {
-        ResultHandlers.Add(_callbackId, _handler);
+        ResultHandlers.put(_callbackId, _handler);
     }
-    /// <summary>
-    /// Method for remove result handler
-    /// </summary>
-    /// <param name="_callbackId">Callback id</param>
-    /// <returns>True if can remove.</returns>
-    public bool RemoveResultHandler(string _callbackId)
+    /**
+     Method for remove result handler
+     @param _callbackId Callback id
+     @return True if can remove.
+     */
+    public boolean RemoveResultHandler(String _callbackId)
     {
-        return ResultHandlers.Remove(_callbackId);
+        boolean result = false;
+        if(ResultHandlers.containsKey(_callbackId))
+        {
+            ResultHandlers.remove(_callbackId);
+            result = true;
+        }
+
+        return result;
     }
 
-    /// <summary>
-    /// Method for invoke plugin command method.
-    /// InvokeMethodNamed will call the named method of a BaseCommand subclass if it exists and pass the variable arguments list along.
-    /// </summary>
-    /// <param name="_callbackId">Callback id</param>
-    /// <param name="_methodName">plugin method name to invoke</param>
-    /// <param name="_args">method arguments</param>
-    /// <returns>Invoked oject result</returns>
-    public object InvokeMethodNamed(string _callbackId, string _methodName, params object[] _args)
+    /**
+    Method for invoke plugin command method.
+    InvokeMethodNamed will call the named method of a BaseCommand subclass if it exists and pass the variable arguments list along.
+    @param _callbackId Callback id
+    @param _methodName plugin method name to invoke
+    @param _args method arguments
+    @return Invoked object result
+    */
+    public Object InvokeMethodNamed(String _callbackId, String _methodName, Object[] _args) throws NoSuchMethodException, IllegalAccessException, InvocationTargetException
     {
-        //Debug.WriteLine(string.Format("InvokeMethodNamed:{0} callbackId:{1}",methodName,callbackId));
-        this.CurrentCommandCallbackId = _callbackId;
+        //Logger.getLogger(getClass().getName()).log(Level.INFO, "InvokeMethodNamed:" + _methodName + " callbackId: " + _callbackId);
+        this.m_currentCommandCallbackId = _callbackId;
         return InvokeMethodNamed(_methodName, _args);
     }
 
-    /// <summary>
-    /// Method for invoke plugin command method.
-    /// InvokeMethodNamed will call the named method of a BaseCommand subclass if it exists and pass the variable arguments list along.
-    /// </summary>
-    /// <param name="_methodName">plugin method name to invoke</param>
-    /// <param name="_args">method arguments</param>
-    /// <returns>Invoked oject result</returns>
-    public object InvokeMethodNamed(string _methodName, params object[] _args)
-    {
-        MethodInfo mInfo = this.GetType().GetMethod(_methodName);
+    /**
+     Method for invoke plugin command method.
+     InvokeMethodNamed will call the named method of a BaseCommand subclass if it exists and pass the variable arguments list along.
+     @param_ methodName plugin method name to invoke
+     @param _args method arguments
+     @return Invoked oject result
+     */
+    public Object InvokeMethodNamed(String _methodName, Object[] _args) throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
 
-        if (mInfo != null)
-        {
-            // every function handles DispatchCommandResult by itself
-            return mInfo.Invoke(this, _args);
-        }
-
-        // actually methodName could refer to a property
-        if (_args == null || _args.Length == 0 ||
-                (_args.Length == 1 && "undefined".Equals(_args[0])))
-        {
-            PropertyInfo pInfo = this.GetType().GetProperty(_methodName);
-            if (pInfo != null)
-            {
-                object res = pInfo.GetValue(this, null);
-
-                DispatchCommandResult(new CommandResult(CommandResult.Status.OK, res));
-
-                return res;
-            }
-        }
-
-        throw new MissingMethodException(_methodName);
-
+        Method mInfo = this.getClass().getMethod(_methodName);
+        return mInfo.invoke(this, _args);
     }
 
-    /// <summary>
-    /// Method for dispatch command result
-    /// </summary>
+    /**
+     Method for dispatch command result
+     */
     public void DispatchCommandResult()
     {
         this.DispatchCommandResult(new CommandResult(CommandResult.Status.NO_RESULT));
     }
 
-    /// <summary>
-    /// Method for dispatch command result with values
-    /// </summary>
-    /// <param name="_result">command result</param>
-    /// <param name="_callbackId">Callback id for command</param>
-    public void DispatchCommandResult(CommandResult _result, string _callbackId="")
+    /**
+     Method for dispatch command result with values
+     @param _result command result
+     */
+    public void DispatchCommandResult(CommandResult _result)
     {
-        if (!string.IsNullOrEmpty(_callbackId))
+        this.DispatchCommandResult(_result, "");
+    }
+
+    /**
+     Method for dispatch command result with values
+     @param _result command result
+     @param _callbackId Callback id for command
+     */
+    public void DispatchCommandResult(CommandResult _result, String _callbackId)
+    {
+        if (null != _callbackId && _callbackId.trim().length() > 0)
         {
-            _result.CallbackId = _callbackId;
+            _result.setCallbackId(_callbackId);
         }
         else
         {
-            _result.CallbackId = this.CurrentCommandCallbackId;
+            _result.setCallbackId(this.m_currentCommandCallbackId);
         }
 
-        if (ResultHandlers.ContainsKey(_result.CallbackId))
+        if (ResultHandlers.containsKey(_result.getCallbackId()))
         {
-            ResultHandlers[_result.CallbackId](this, _result);
+            ResultHandlers.get(_result.getCallbackId()).Invoke(this, _result);
         }
         else if (this.OnCommandResult != null)
         {
-            OnCommandResult(this, _result);
+            OnCommandResult.Invoke(this, _result);
         }
         else
         {
-            Debug.WriteLine("Failed to locate callback for id : " + _result.CallbackId);
+            Logger.getLogger(getClass().getName()).log(Level.WARNING, "Failed to locate callback for id : " + _result.getCallbackId());
         }
 
-        if (!_result.KeepCallback)
+        if (!_result.getIsKeepCallback())
         {
             this.OnCommandResult = null;
         }
@@ -145,23 +147,25 @@ public class BaseCommand
     }
 
 
-    /// <summary>
-    /// Occurs when the application is being deactivated.
-    /// </summary>
-    public virtual void OnReset() {}
+    /**
+     Occurs when the application is being deactivated.
+    */
+    public void OnReset() {}
 
-    /// <summary>
-    /// Occurs when the application is being loaded, and the config.xml has an autoload entry
-    /// </summary>
-    public virtual void OnInit() {}
+    /**
+     Occurs when the application is being loaded, and the config.xml has an autoload entry
+    */
+    public void OnInit() {}
 
-    /// <summary>
-    /// Detach all command handlers
-    /// </summary>
+    /**
+     Detach all command handlers
+    */
     public void DetachHandlers()
     {
         this.OnCommandResult = null;
-        foreach (string callbackId in new List<string>(ResultHandlers.Keys))
+
+        Set<String> keys = new HashSet<>(ResultHandlers.keySet());
+        for (String callbackId : keys )
         {
             RemoveResultHandler(callbackId);
         }

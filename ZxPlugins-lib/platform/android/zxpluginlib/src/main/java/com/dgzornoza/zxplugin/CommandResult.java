@@ -34,8 +34,8 @@ public class CommandResult
     public String getMessage() { return m_message; }
     public void setMessage(String _message) { this.m_message = _message; }
 
-    public boolean isKeepCallback() { return m_keepCallback; }
-    public void setKeepCallback(boolean _keepCallback) { this.m_keepCallback = _keepCallback; }
+    public boolean getIsKeepCallback() { return m_keepCallback; }
+    public void setIsKeepCallback(boolean _keepCallback) { this.m_keepCallback = _keepCallback; }
 
     public String getCallbackId() { return m_callbackId; }
     public void setCallbackId(String _callbackId) { this.m_callbackId = _callbackId; }
